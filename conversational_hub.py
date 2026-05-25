@@ -193,11 +193,20 @@ Keep responses concise for Telegram (max 400 chars per message)."""
 
             result = mt5.order_send(request)
 
-            if result.retcode == mt5.TRADE_RETCODE_DONE:
+            if result is None:
+                # Ensure MT5 is connected
+                if trader.mt5_manager.ensure_connected():
+                    result = mt5.order_send(request)
+                else:
+                    return "MT5 connection lost"
+
+            if result and result.retcode == mt5.TRADE_RETCODE_DONE:
                 msg = f"TRADE OPENED\n{action.upper()} {quantity}L {symbol}\nEntry: ${indicators['price']:.4f}\nSL: ${sl:.4f}\nTP: ${tp:.4f}"
                 return msg
-            else:
+            elif result:
                 return f"Trade failed: {result.comment}"
+            else:
+                return "Trade execution failed - no response from MT5"
 
         except Exception as e:
             logger.error(f"Trade execution error: {e}")
