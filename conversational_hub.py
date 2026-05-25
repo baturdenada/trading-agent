@@ -216,6 +216,19 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             if not symbol_info.trade_mode or symbol_info.trade_mode == 'DISABLED':
                 return f"Trading disabled for {symbol}"
 
+            # Validate and adjust volume
+            min_volume = symbol_info.volume_min
+            volume_step = symbol_info.volume_step
+
+            # Ensure quantity meets minimum
+            if quantity < min_volume:
+                quantity = min_volume
+                logger.info(f"Volume adjusted from request to minimum: {quantity}")
+
+            # Round to nearest step
+            quantity = round(quantity / volume_step) * volume_step
+            logger.info(f"Final volume: {quantity} (min: {min_volume}, step: {volume_step})")
+
             # Place trade
             order_type = mt5.ORDER_TYPE_BUY if action.upper() == "BUY" else mt5.ORDER_TYPE_SELL
 
