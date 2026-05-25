@@ -370,12 +370,19 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             }
 
             result = mt5.order_send(request)
+
+            if result is None:
+                last_error = mt5.last_error()
+                return f"❌ Order send failed for {symbol}: {last_error}"
+
             if result.retcode == mt5.TRADE_RETCODE_DONE:
                 return f"✅ Closed {symbol} | P&L: ${position.profit:+.2f}"
             else:
-                return f"❌ Close failed for {symbol}: {result.comment}"
+                error_msg = result.comment if hasattr(result, 'comment') else 'Unknown error'
+                return f"❌ Close failed for {symbol}: {error_msg}"
 
         except Exception as e:
+            logger.error(f"Close position exception: {e}")
             return f"❌ Error closing {symbol}: {str(e)[:100]}"
 
     def process_input(self, user_input):
