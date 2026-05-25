@@ -75,7 +75,7 @@ class ConversationalHub:
 
 Respond with ONLY a JSON object (no other text):
 {
-    "intent": "ANALYZE|TRADE|CLOSE|STATS|RISK|CONVERSATION|UNKNOWN",
+    "intent": "ANALYZE|TRADE|CLOSE|STATS|HISTORY|RISK|CONVERSATION|UNKNOWN",
     "action": "specific action to take",
     "parameters": {
         "symbol": "symbol if mentioned (e.g., 'euro' = EURUSD, 'dollar franc' = USDCHF, 'gold' = XAUUSD)",
@@ -94,12 +94,21 @@ CLOSE intent examples:
 - "close gold position" → CLOSE intent with symbol=XAUUSD
 - "shut down the yen trade" → CLOSE intent with symbol=USDJPY
 
+HISTORY intent examples:
+- "history" → HISTORY intent
+- "todays trades" → HISTORY intent
+- "history of today" → HISTORY intent
+- "closed trades today" → HISTORY intent
+- "trade history" → HISTORY intent
+
 INTENT GUIDE:
 - ANALYZE: User wants technical analysis (e.g., "analyze gold", "how is eurusd", "check xauusd")
 - TRADE: User wants to open a trade (e.g., "buy 0.05 gold", "sell eurusd", "open position")
+- CLOSE: User wants to close a position (e.g., "close euro", "close dollar franc", "shut down yen trade")
 - BACKTEST: User wants to test a strategy (e.g., "backtest eurusd with tp 300 sl 2000")
 - OPTIMIZE: User wants to find best parameters
 - STATS: User wants account statistics
+- HISTORY: User wants to see closed trades today
 - RISK: User wants risk analysis
 - CONVERSATION: General chat (e.g., "how are you", "what can you do", "tell me about yourself")
 - UNKNOWN: Can't determine intent
@@ -221,6 +230,17 @@ Keep responses concise for Telegram (max 400 chars per message)."""
         except Exception as e:
             logger.error(f"Analysis error: {e}")
             return f"Could not analyze {symbol}: {str(e)[:100]}"
+
+    def handle_history(self):
+        """Get today's closed trades history"""
+        from trade_historian import TradeHistorian
+        try:
+            historian = TradeHistorian()
+            summary = historian.get_today_summary()
+            return summary
+        except Exception as e:
+            logger.error(f"History error: {e}")
+            return f"Could not retrieve trade history: {str(e)[:100]}"
 
     def handle_trade(self, symbol, action, quantity, tp=None, sl=None):
         """Handle trade execution request"""
@@ -424,6 +444,9 @@ Keep responses concise for Telegram (max 400 chars per message)."""
 
         elif intent == "STATS":
             return self.handle_stats()
+
+        elif intent == "HISTORY":
+            return self.handle_history()
 
         elif intent == "RISK":
             return self.handle_stats()  # Similar to stats for now

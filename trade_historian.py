@@ -345,3 +345,45 @@ class TradeHistorian:
             win_rate = trends[trend]['win_rate']
             return win_rate / 100
         return 0.5
+
+    def get_today_trades(self):
+        """Get all trades from today"""
+        today = datetime.now().date()
+        today_trades = []
+
+        for trade in self.trades:
+            trade_date = datetime.fromisoformat(trade['timestamp']).date()
+            if trade_date == today:
+                today_trades.append(trade)
+
+        return today_trades
+
+    def get_today_summary(self):
+        """Get today's trading summary"""
+        today_trades = self.get_today_trades()
+
+        if not today_trades:
+            return "No closed trades today"
+
+        total_trades = len(today_trades)
+        wins = sum(1 for t in today_trades if t['win'])
+        losses = total_trades - wins
+        total_profit = sum(t['profit'] for t in today_trades)
+        win_rate = (wins / total_trades * 100) if total_trades > 0 else 0
+
+        msg = f"📈 TODAY'S CLOSED TRADES\n"
+        msg += f"Total: {total_trades} | Wins: {wins} | Losses: {losses} | Win Rate: {win_rate:.1f}%\n"
+        msg += f"Total P&L: ${total_profit:+.2f}\n\n"
+        msg += "CLOSED TRADES:\n"
+
+        for i, trade in enumerate(today_trades[-10:], 1):  # Show last 10
+            symbol = trade['symbol']
+            profit = trade['profit']
+            setup = trade['setup_type']
+            status = "✅" if trade['win'] else "❌"
+            msg += f"{status} {symbol} {setup}: ${profit:+.2f}\n"
+
+        if len(today_trades) > 10:
+            msg += f"\n... and {len(today_trades) - 10} more trades"
+
+        return msg
