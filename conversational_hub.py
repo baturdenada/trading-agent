@@ -165,11 +165,16 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             if not account:
                 return "Account not connected"
 
-            if not trader.risk_manager.check_max_positions():
-                return "Max concurrent positions reached"
+            # Check max positions
+            import MetaTrader5 as mt5
+            positions = mt5.positions_get()
+            open_count = len(positions) if positions else 0
+
+            limit_exceeded, reason = trader.risk_manager.check_max_positions(open_count)
+            if limit_exceeded:
+                return reason
 
             # Place trade
-            import MetaTrader5 as mt5
             order_type = mt5.ORDER_TYPE_BUY if action.upper() == "BUY" else mt5.ORDER_TYPE_SELL
 
             request = {
