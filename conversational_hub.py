@@ -90,6 +90,37 @@ Extract parameters naturally - don't be strict about format."""
             "reasoning": "Error in processing"
         }
 
+    def handle_stats(self):
+        """Get account statistics and open positions"""
+        try:
+            import MetaTrader5 as mt5
+            account = self.ultimate_trader.mt5_manager.get_account_info()
+
+            if not account:
+                return "MT5 not connected"
+
+            positions = mt5.positions_get()
+            open_count = len(positions) if positions else 0
+
+            msg = f"📊 ACCOUNT STATS\n"
+            msg += f"Balance: ${account.balance:.2f}\n"
+            msg += f"Equity: ${account.equity:.2f}\n"
+            msg += f"Profit/Loss: ${account.equity - account.balance:.2f}\n"
+            msg += f"Open Positions: {open_count}\n"
+
+            if open_count > 0:
+                msg += f"\n🔓 OPEN POSITIONS:\n"
+                for pos in positions[:5]:  # Show first 5
+                    profit = pos.profit if hasattr(pos, 'profit') else 0
+                    msg += f"• {pos.symbol}: {pos.volume}L @ ${pos.price_open:.4f} ({profit:+.2f})\n"
+                if open_count > 5:
+                    msg += f"... and {open_count - 5} more"
+
+            return msg
+        except Exception as e:
+            logger.error(f"Stats error: {e}")
+            return f"Error getting stats: {str(e)[:50]}"
+
     def handle_conversation(self, user_input):
         """Handle general conversation"""
         system_prompt = """You are an intelligent trading AI assistant with a friendly personality.
@@ -242,6 +273,12 @@ Keep responses concise for Telegram (max 400 chars per message)."""
                 return self.handle_trade(symbol, action, quantity)
             else:
                 return "What symbol do you want to trade? (XAUUSD, EURUSD, etc.)"
+
+        elif intent == "STATS":
+            return self.handle_stats()
+
+        elif intent == "RISK":
+            return self.handle_stats()  # Similar to stats for now
 
         elif intent == "CONVERSATION":
             return self.handle_conversation(user_input)
