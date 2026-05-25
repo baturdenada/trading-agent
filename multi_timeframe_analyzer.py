@@ -102,7 +102,7 @@ class MultiTimeframeAnalyzer:
 
         # Get confidence adjustment
         threshold_info = self.alignment_thresholds.get(alignment.value, {'proceed': True, 'confidence_mult': 0.8})
-        confidence_mult = threshold_info['confidence_adjustment']
+        confidence_mult = threshold_info['confidence_mult']
         should_proceed = threshold_info['proceed']
 
         return MultiTimeframeDecision(
