@@ -177,8 +177,8 @@ class GitAutoDeployer:
                             logger.warning(f"Killing forbidden agent: {agent_name}")
                             self.kill_process(agent_name)
 
-                # Check every 60 seconds
-                time.sleep(60)
+                # Check every 20 seconds (faster deployment)
+                time.sleep(20)
 
             except Exception as e:
                 logger.error(f"Deployer error: {e}")
