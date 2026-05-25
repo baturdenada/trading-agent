@@ -365,7 +365,7 @@ Keep responses concise for Telegram (max 400 chars per message)."""
                 "type": order_type,
                 "position": position.ticket,
                 "deviation": 20,
-                "comment": "Closed via natural language command",
+                "comment": "NL_CLOSE",
                 "type_filling": mt5.ORDER_FILLING_IOC,
             }
 
