@@ -24,11 +24,50 @@ class ConversationalHub:
         self.telegram_token = Config.TELEGRAM_TOKEN
         self.telegram_chat_id = Config.TELEGRAM_CHAT_ID
         self.conversation_history = []
+
+        # Natural language to symbol mapping
+        self.symbol_aliases = {
+            'gold': 'XAUUSD.s',
+            'silver': 'XAGUSD.s',
+            'euro': 'EURUSD.s',
+            'eur': 'EURUSD.s',
+            'dollar franc': 'USDCHF.s',
+            'franc': 'USDCHF.s',
+            'chf': 'USDCHF.s',
+            'usdchf': 'USDCHF.s',
+            'dollar yen': 'USDJPY.s',
+            'yen': 'USDJPY.s',
+            'jpy': 'USDJPY.s',
+            'usdjpy': 'USDJPY.s',
+            'dollar cad': 'USDCAD.s',
+            'canadian': 'USDCAD.s',
+            'cad': 'USDCAD.s',
+            'usdcad': 'USDCAD.s',
+            'pound': 'GBPUSD.s',
+            'gbpusd': 'GBPUSD.s',
+            'gbp': 'GBPUSD.s',
+        }
         logger.info("Conversational Hub initialized")
 
     def send(self, msg):
         """Send message via Telegram"""
         send_telegram_reliable(self.telegram_token, self.telegram_chat_id, msg, max_retries=2)
+
+    def parse_symbol_from_text(self, text):
+        """Convert natural language like 'dollar franc' to 'USDCHF.s'"""
+        text_lower = text.lower()
+
+        # Check aliases
+        for alias, symbol in self.symbol_aliases.items():
+            if alias in text_lower:
+                return symbol
+
+        # Check direct symbol names (EURUSD, XAUUSD, etc)
+        for word in text_lower.split():
+            if word.upper() in ['EURUSD', 'XAUUSD', 'XAGUSD', 'USDCHF', 'USDJPY', 'USDCAD', 'GBPUSD']:
+                return word.upper() + '.s'
+
+        return None
 
     def understand_intent(self, user_input):
         """Use GPT to understand what the user wants"""
@@ -36,10 +75,10 @@ class ConversationalHub:
 
 Respond with ONLY a JSON object (no other text):
 {
-    "intent": "ANALYZE|TRADE|BACKTEST|OPTIMIZE|STATS|RISK|CONVERSATION|UNKNOWN",
+    "intent": "ANALYZE|TRADE|CLOSE|STATS|RISK|CONVERSATION|UNKNOWN",
     "action": "specific action to take",
     "parameters": {
-        "symbol": "symbol if mentioned",
+        "symbol": "symbol if mentioned (e.g., 'euro' = EURUSD, 'dollar franc' = USDCHF, 'gold' = XAUUSD)",
         "quantity": "quantity/lot if mentioned",
         "tp": "take profit if mentioned",
         "sl": "stop loss if mentioned",
@@ -48,6 +87,12 @@ Respond with ONLY a JSON object (no other text):
     "confidence": 0-100,
     "reasoning": "why you think this is the intent"
 }
+
+CLOSE intent examples:
+- "close dollar franc" → CLOSE intent with symbol=USDCHF
+- "close euro" → CLOSE intent with symbol=EURUSD
+- "close gold position" → CLOSE intent with symbol=XAUUSD
+- "shut down the yen trade" → CLOSE intent with symbol=USDJPY
 
 INTENT GUIDE:
 - ANALYZE: User wants technical analysis (e.g., "analyze gold", "how is eurusd", "check xauusd")
@@ -290,6 +335,49 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             logger.error(f"Trade execution error: {e}")
             return f"Trade execution error: {str(e)[:100]}"
 
+    def handle_close_position(self, symbol_text):
+        """Close an open position by natural language symbol"""
+        import MetaTrader5 as mt5
+
+        # Convert natural language to symbol
+        symbol = self.parse_symbol_from_text(symbol_text)
+
+        if not symbol:
+            return f"❌ Couldn't recognize symbol from: '{symbol_text}'\n\nTry: gold, silver, euro, dollar franc, dollar yen, dollar cad"
+
+        # Find the position
+        try:
+            positions = mt5.positions_get(symbol=symbol)
+            if not positions:
+                return f"❌ No open position for {symbol}"
+
+            # Close the position
+            position = positions[0]
+            tick = mt5.symbol_info_tick(symbol)
+            if not tick:
+                return f"❌ Could not get price for {symbol}"
+
+            order_type = mt5.ORDER_TYPE_SELL if position.type == 0 else mt5.ORDER_TYPE_BUY
+            request = {
+                "action": mt5.TRADE_ACTION_DEAL,
+                "symbol": symbol,
+                "volume": position.volume,
+                "type": order_type,
+                "position": position.ticket,
+                "deviation": 20,
+                "comment": "Closed via natural language command",
+                "type_filling": mt5.ORDER_FILLING_IOC,
+            }
+
+            result = mt5.order_send(request)
+            if result.retcode == mt5.TRADE_RETCODE_DONE:
+                return f"✅ Closed {symbol} | P&L: ${position.profit:+.2f}"
+            else:
+                return f"❌ Close failed for {symbol}: {result.comment}"
+
+        except Exception as e:
+            return f"❌ Error closing {symbol}: {str(e)[:100]}"
+
     def process_input(self, user_input):
         """Main entry point - process any user input intelligently"""
         logger.info(f"Processing: {user_input}")
@@ -322,6 +410,10 @@ Keep responses concise for Telegram (max 400 chars per message)."""
                 return self.handle_trade(symbol, action, quantity, tp=tp, sl=sl)
             else:
                 return "What symbol do you want to trade? (XAUUSD, EURUSD, etc.)"
+
+        elif intent == "CLOSE":
+            symbol_text = intent_data.get('parameters', {}).get('symbol', user_input)
+            return self.handle_close_position(symbol_text)
 
         elif intent == "STATS":
             return self.handle_stats()
