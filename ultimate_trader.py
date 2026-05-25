@@ -19,6 +19,9 @@ from api_helper import send_telegram_reliable, call_deepseek_reliable
 from risk_manager import RiskManager
 from config import Config
 from state_manager import StateManager
+from trade_historian import TradeHistorian
+from regime_detector import RegimeDetector
+from position_optimizer import PositionOptimizer
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(message)s', datefmt='%H:%M:%S')
 logger = logging.getLogger(__name__)
@@ -76,6 +79,14 @@ class UltimateTrader:
 
         # Claude webhook (your local PC)
         self.claude_webhook = "http://YOUR_LOCAL_PC_IP:5002/webhook"  # Replace with your IP or ngrok URL
+
+        # Initialize learning & adaptation systems
+        self.historian = TradeHistorian()
+        self.regime_detector = RegimeDetector()
+        self.position_optimizer = PositionOptimizer(
+            historian=self.historian,
+            regime_detector=self.regime_detector
+        )
 
         # Connect
         self.connect_mt5()
@@ -362,6 +373,11 @@ Only BUY/SELL if confidence > 60."""
         if not pos:
             return
         pos = pos[0]
+
+        # Get current price for exit
+        tick = mt5.symbol_info_tick(pos.symbol)
+        exit_price = tick.bid if pos.type == 0 else tick.ask
+
         order_type = mt5.ORDER_TYPE_SELL if pos.type == 0 else mt5.ORDER_TYPE_BUY
         request = {
             "action": mt5.TRADE_ACTION_DEAL, "symbol": pos.symbol, "volume": pos.volume,
@@ -370,6 +386,25 @@ Only BUY/SELL if confidence > 60."""
         }
         result = mt5.order_send(request)
         if result.retcode == mt5.TRADE_RETCODE_DONE:
+            # Log trade to historian for learning
+            try:
+                win = pos.profit > 0
+                self.historian.log_trade(
+                    symbol=pos.symbol,
+                    entry_price=pos.price_open,
+                    exit_price=exit_price,
+                    entry_time=datetime.fromtimestamp(pos.time).isoformat(),
+                    exit_time=datetime.now().isoformat(),
+                    profit=pos.profit,
+                    setup_type="MANUAL_CLOSE",  # Or extract from reason
+                    rsi_value=0,  # Would need to calculate
+                    trend="UNKNOWN",  # Would need indicators
+                    confidence=0,
+                    win=win
+                )
+            except Exception as e:
+                logger.warning(f"Could not log trade to historian: {e}")
+
             self.send(f"🔒 CLOSED {pos.symbol} | Reason: {reason}")
     
     def check_portfolio_risk(self):
@@ -513,7 +548,21 @@ Only BUY/SELL if confidence > 60."""
         self.send(f"📊 RISK STATUS\nMax Positions: {self.max_positions}\nCurrent: {len(positions)}\nDaily Loss Limit: ${self.daily_loss_limit}\nCurrent PnL: ${total_pnl:+.2f}\nTrailing: {self.trailing_activation}x risk")
     
     def cmd_help(self):
-        self.send("🔥 ULTIMATE TRADER\n\nFEATURES:\n• Dynamic SL/TP modification\n• Trailing stop loss\n• Early exit on reversal\n• Portfolio risk management\n• Multi-timeframe analysis\n• Natural language processing via Claude\n\nCOMMANDS:\nstatus, positions, risk, help\n\nOr just type anything else and Claude will process it!")
+        self.send("🔥 ULTIMATE TRADER\n\nFEATURES:\n• Dynamic SL/TP modification\n• Trailing stop loss\n• Early exit on reversal\n• Portfolio risk management\n• Multi-timeframe analysis\n• Self-learning from trade history\n• Market regime adaptation\n• Position optimization\n\nCOMMANDS:\nstatus, positions, risk, help\n\nOr just type anything else and Claude will process it!")
+
+    def _extract_setup_type(self, reasoning_text):
+        """Extract setup type from AI reasoning for learning"""
+        text = reasoning_text.lower()
+        if 'rsi' in text and ('extreme' in text or 'overbought' in text or 'oversold' in text):
+            return 'RSI_EXTREME'
+        elif 'trend' in text and 'reversal' in text:
+            return 'TREND_REVERSAL'
+        elif 'momentum' in text or 'breakout' in text:
+            return 'MOMENTUM_BREAKOUT'
+        elif 'pivot' in text or 'support' in text or 'resistance' in text:
+            return 'LEVEL_BOUNCE'
+        else:
+            return 'GENERAL_SIGNAL'
     
     def scan_and_trade(self):
         if not self.is_market_open:
@@ -523,31 +572,89 @@ Only BUY/SELL if confidence > 60."""
             return
         if not self.check_portfolio_risk():
             return
+
+        # Get all open positions for scoring and optimization
+        all_positions = self.position_optimizer.evaluate_all_positions(self.symbols, account)
+
         for symbol_info in self.symbols:
             positions = mt5.positions_get(symbol=symbol_info['name'])
             if positions:
                 for pos in positions:
                     self.manage_position(pos, symbol_info)
                 continue
+
             indicators = self.calculate_indicators(symbol_info['name'])
             if not indicators:
                 continue
+
+            # Detect market regime for this symbol
+            rates = mt5.copy_rates_from_pos(symbol_info['name'], mt5.TIMEFRAME_H1, 0, 100)
+            regime_info = self.regime_detector.detect_regime(symbol_info['name'], rates, indicators) if rates else {}
+
             decision = self.get_ai_decision(symbol_info, indicators, account, False)
-            if decision and decision.get('action') in ['BUY', 'SELL'] and decision.get('confidence', 0) > 45:
-                lot, risk_pct = self.calculate_lot_size(symbol_info, decision['confidence'], account.balance, indicators['atr'])
+
+            # Adjust confidence based on learned patterns
+            if self.historian:
+                setup_type = self._extract_setup_type(decision.get('reasoning', ''))
+                adjusted_confidence = decision.get('confidence', 50)
+                learned_threshold = self.historian.get_setup_confidence(setup_type)
+                if self.historian.should_skip_setup(setup_type):
+                    logger.info(f"Skipping {setup_type} for {symbol_info['name']} - poor historical win rate")
+                    continue
+            else:
+                adjusted_confidence = decision.get('confidence', 50)
+
+            min_confidence = 50
+            if decision and decision.get('action') in ['BUY', 'SELL'] and adjusted_confidence >= min_confidence:
+                lot, risk_pct = self.calculate_lot_size(symbol_info, adjusted_confidence, account.balance, indicators['atr'])
+
+                # Apply position size adjustment based on regime
+                regime_size_adjustment = regime_info.get('regime', 'UNKNOWN')
+                if regime_size_adjustment == 'VOLATILE':
+                    lot *= 0.7  # 30% smaller in volatile markets
+                    logger.info(f"Reducing lot size by 30% due to volatile regime")
+
                 tick = mt5.symbol_info_tick(symbol_info['name'])
                 if not tick:
                     continue
+
+                # Check if we should swap a position for this one
+                if len(all_positions) >= 5:
+                    should_swap, ticket_to_close = self.position_optimizer.should_swap_for_new_trade(
+                        all_positions, adjusted_confidence
+                    )
+                    if should_swap and ticket_to_close:
+                        logger.info(f"Swapping position {ticket_to_close} for new {decision['action']} signal")
+                        self.close_position(ticket_to_close, "Position swap for better opportunity")
+                        time.sleep(1)
+
+                # Set SL/TP with regime adjustment
                 if decision['action'] == 'BUY':
                     price = tick.ask
                     order_type = mt5.ORDER_TYPE_BUY
-                    sl = decision.get('stop_loss', indicators['support'] - indicators['atr'])
-                    tp = decision.get('take_profit', indicators['resistance'] + indicators['atr'])
+                    base_sl = indicators['support'] - indicators['atr']
+                    base_tp = indicators['resistance'] + indicators['atr']
                 else:
                     price = tick.bid
                     order_type = mt5.ORDER_TYPE_SELL
-                    sl = decision.get('stop_loss', indicators['resistance'] + indicators['atr'])
-                    tp = decision.get('take_profit', indicators['support'] - indicators['atr'])
+                    base_sl = indicators['resistance'] + indicators['atr']
+                    base_tp = indicators['support'] - indicators['atr']
+
+                # Apply regime adjustments to SL/TP
+                if regime_info:
+                    sl_multiple = regime_info.get('suggested_sl_multiple', 1.0)
+                    tp_multiple = regime_info.get('suggested_tp_multiple', 1.5)
+                    atr_adjusted = indicators['atr'] * (sl_multiple / tp_multiple)  # Adjust ATR scaling
+                    if decision['action'] == 'BUY':
+                        sl = indicators['support'] - (atr_adjusted * sl_multiple)
+                        tp = indicators['resistance'] + (atr_adjusted * tp_multiple)
+                    else:
+                        sl = indicators['resistance'] + (atr_adjusted * sl_multiple)
+                        tp = indicators['support'] - (atr_adjusted * tp_multiple)
+                else:
+                    sl = base_sl
+                    tp = base_tp
+
                 request = {
                     "action": mt5.TRADE_ACTION_DEAL, "symbol": symbol_info['name'], "volume": lot,
                     "type": order_type, "price": price, "sl": round(sl, 5), "tp": round(tp, 5),
@@ -556,7 +663,8 @@ Only BUY/SELL if confidence > 60."""
                 }
                 result = mt5.order_send(request)
                 if result.retcode == mt5.TRADE_RETCODE_DONE:
-                    self.send(f"🔥 {decision['action']} {lot} {symbol_info['name']} @ {price:.3f}\nRisk: {risk_pct:.1f}% | SL: {sl:.3f} | TP: {tp:.3f}\n{decision.get('reasoning', '')[:100]}")
+                    regime_note = f" [{regime_info.get('regime', 'N/A')}]" if regime_info else ""
+                    self.send(f"🔥 {decision['action']} {lot} {symbol_info['name']} @ {price:.3f}{regime_note}\nRisk: {risk_pct:.1f}% | SL: {sl:.3f} | TP: {tp:.3f}\n{decision.get('reasoning', '')[:100]}")
                 time.sleep(3)
     
     def run(self):
