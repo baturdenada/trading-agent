@@ -17,7 +17,7 @@ logger = logging.getLogger(__name__)
 
 class GitAutoDeployer:
     def __init__(self):
-        self.project_dir = Path("C:/Users/Administrator/Desktop/DS trading agent")
+        self.project_dir = Path("C:\\Users\\Administrator\\Desktop\\DS trading agent")
         self.repo_url = "https://github.com/baturdenada/trading-agent.git"
         self.local_commit_hash = None
 
@@ -36,7 +36,7 @@ class GitAutoDeployer:
         try:
             result = subprocess.run(
                 "git rev-parse HEAD",
-                cwd=self.project_dir,
+                cwd=str(self.project_dir),
                 capture_output=True,
                 text=True,
                 shell=True
@@ -51,7 +51,7 @@ class GitAutoDeployer:
             logger.info("Pulling latest code from GitHub...")
             result = subprocess.run(
                 "git pull origin main",
-                cwd=self.project_dir,
+                cwd=str(self.project_dir),
                 capture_output=True,
                 text=True,
                 shell=True,
@@ -96,7 +96,7 @@ class GitAutoDeployer:
         """Start an agent"""
         try:
             subprocess.Popen(
-                f'start cmd /c "cd {self.project_dir} && py {script_name}"',
+                f'start cmd /c "cd {str(self.project_dir)} && py {script_name}"',
                 shell=True
             )
             logger.info(f"Started {script_name}")
@@ -143,7 +143,7 @@ class GitAutoDeployer:
             logger.info("Initializing git repository...")
             subprocess.run(
                 f"git clone {self.repo_url} .",
-                cwd=self.project_dir,
+                cwd=str(self.project_dir),
                 shell=True,
                 capture_output=True
             )
