@@ -126,13 +126,19 @@ Respond with ONLY the category name, nothing else."""
             return "❌ Please specify a symbol (XAUUSD, EURUSD, etc.)"
 
         symbol = params['symbols'][0]
+        # Remove .s suffix if present for MT5 API
+        symbol_clean = symbol.replace('.s', '')
         days = params['days']
 
         # Get candles
         try:
-            rates = mt5.copy_rates_from_pos(symbol, mt5.TIMEFRAME_D1, 0, days)
+            # Ensure symbol is selected
+            mt5.symbol_select(symbol_clean, True)
+
+            rates = mt5.copy_rates_from_pos(symbol_clean, mt5.TIMEFRAME_D1, 0, days)
             if rates is None:
-                return f"❌ Failed to get candles for {symbol}"
+                last_error = mt5.last_error()
+                return f"❌ Failed to get candles for {symbol_clean}: {last_error}"
 
             # Calculate basic metrics
             closes = [float(r[4]) for r in rates]
