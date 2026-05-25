@@ -620,8 +620,8 @@ Only BUY/SELL if confidence > 60."""
 
         # If new signal is low-moderate confidence but we have high-quality positions, defer
         if confidence < 70:
-            # Check quality of existing positions
-            existing_scores = [p.get('score', 50) for p in existing_positions]
+            # Check quality of existing positions (extract 'total' score from dict)
+            existing_scores = [p.get('score', {}).get('total', 50) if isinstance(p.get('score'), dict) else p.get('score', 50) for p in existing_positions]
             avg_position_quality = sum(existing_scores) / len(existing_scores) if existing_scores else 50
 
             if avg_position_quality > 65:
