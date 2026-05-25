@@ -22,6 +22,12 @@ from state_manager import StateManager
 from trade_historian import TradeHistorian
 from regime_detector import RegimeDetector
 from position_optimizer import PositionOptimizer
+from trade_state_machine import TradeStateMachine, TradeState
+from consensus_engine import ConsensusEngine, AgentOpinion
+from multi_timeframe_analyzer import MultiTimeframeAnalyzer
+from strategy_plugin import StrategyPluginManager, SignalOutput
+from ml_feedback import get_analyzer, TradeOutcome
+from economic_calendar import get_calendar
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s | %(message)s', datefmt='%H:%M:%S')
 logger = logging.getLogger(__name__)
@@ -87,6 +93,17 @@ class UltimateTrader:
             historian=self.historian,
             regime_detector=self.regime_detector
         )
+
+        # Initialize state machine & consensus engine for professional trade execution
+        self.state_machine = TradeStateMachine(
+            min_confirmation_candles=1,  # 1 candle minimum
+            max_confirmation_candles=3   # 3 candle maximum
+        )
+        self.consensus_engine = ConsensusEngine(required_agreement=0.66)  # 2/3 agreement required
+        self.mtf_analyzer = MultiTimeframeAnalyzer()  # Multi-timeframe confirmation across H1/M30/M15
+        self.strategy_manager = StrategyPluginManager()  # Modular strategy system
+        self.ml_analyzer = get_analyzer()  # ML feedback loop for learning from outcomes
+        self.economic_calendar = get_calendar()  # Economic calendar for news avoidance
 
         # Connect
         self.connect_mt5()
@@ -306,7 +323,116 @@ class UltimateTrader:
 
             lot_size = max(0.01, min(lot_size, 0.5))
             return round(lot_size, 2), risk_pct
-    
+
+    def collect_consensus_opinions(self, symbol_info, indicators, ai_decision, regime_info, all_positions):
+        """
+        Collect opinions from multiple systems for consensus voting
+
+        Returns: List of AgentOpinion objects
+        """
+        opinions = []
+
+        # 1. NLP/AI Engine opinion
+        ai_action = ai_decision.get('action', 'SKIP')
+        ai_confidence = ai_decision.get('confidence', 50)
+        opinions.append(AgentOpinion(
+            agent_name='nlp_engine',
+            action=ai_action,
+            confidence=ai_confidence,
+            reasoning=ai_decision.get('reasoning', 'AI analysis')[:60],
+            signal_strength='STRONG' if ai_confidence > 70 else 'WEAK'
+        ))
+
+        # 2. Regime Detector opinion
+        regime = regime_info.get('regime', 'UNKNOWN')
+        regime_opinion_action = 'SKIP'
+        regime_confidence = regime_info.get('confidence', 50)
+
+        if regime == 'STRONG_TREND':
+            regime_opinion_action = ai_action  # Follow AI signal in strong trends
+            regime_confidence = min(regime_confidence + 10, 100)
+        elif regime == 'VOLATILE':
+            regime_opinion_action = 'SKIP'  # Skip in volatile markets
+            regime_confidence = 100
+        elif regime == 'RANGING':
+            regime_opinion_action = ai_action if ai_confidence > 60 else 'SKIP'
+
+        opinions.append(AgentOpinion(
+            agent_name='regime_detector',
+            action=regime_opinion_action,
+            confidence=regime_confidence,
+            reasoning=f'{regime} market (confidence: {regime_info.get("confidence", 50)}%)',
+            signal_strength='STRONG',
+            regime=regime
+        ))
+
+        # 3. Position Optimizer opinion (look at existing position quality)
+        pos_optimizer_action = 'SKIP'
+        pos_optimizer_confidence = 50
+
+        if all_positions:
+            avg_quality = sum(p['score'].get('total', 50) if isinstance(p.get('score'), dict)
+                            else p.get('score', 50) for p in all_positions) / len(all_positions)
+            if avg_quality < 40:  # Existing positions weak
+                pos_optimizer_action = ai_action  # Open new positions
+                pos_optimizer_confidence = 70
+            elif avg_quality > 75:  # Existing positions excellent
+                pos_optimizer_action = 'SKIP'  # Don't add new positions
+                pos_optimizer_confidence = 80
+        else:
+            pos_optimizer_action = ai_action
+            pos_optimizer_confidence = 65
+
+        opinions.append(AgentOpinion(
+            agent_name='position_optimizer',
+            action=pos_optimizer_action,
+            confidence=pos_optimizer_confidence,
+            reasoning=f'Current portfolio quality: {avg_quality:.0f}' if all_positions else 'No existing positions',
+            signal_strength='STRONG' if pos_optimizer_confidence > 70 else 'WEAK'
+        ))
+
+        return opinions
+
+    def get_hybrid_decision(self, symbol_info, indicators, account, has_position):
+        """
+        Hybrid decision: Combine AI analysis with plugin strategies
+        Returns best signal from plugins, validated by AI
+        """
+        # Get all plugin signals
+        plugin_signals = self.strategy_manager.analyze_with_all(
+            symbol_info['name'],
+            indicators,
+            {'balance': account.balance, 'equity': account.equity}
+        )
+
+        # Filter for trading signals (not HOLD)
+        trading_signals = {
+            name: signal for name, signal in plugin_signals.items()
+            if signal.action in ['BUY', 'SELL']
+        }
+
+        # If plugins suggest trading, use their signal
+        if trading_signals:
+            # Get highest confidence signal
+            best_signal = max(trading_signals.values(), key=lambda s: s.confidence)
+            logger.info(f"Plugin signal for {symbol_info['name']}: {best_signal.setup_type} - {best_signal.action} ({best_signal.confidence:.0f}%)")
+
+            return {
+                'action': best_signal.action,
+                'confidence': best_signal.confidence,
+                'entry_price': best_signal.entry_price,
+                'stop_loss': best_signal.stop_loss,
+                'take_profit': best_signal.take_profit,
+                'reasoning': best_signal.reasoning,
+                'source': 'PLUGIN'
+            }
+
+        # No plugin signals, fall back to AI decision
+        logger.debug(f"No plugin signals for {symbol_info['name']}, using AI")
+        ai_decision = self.get_ai_decision(symbol_info, indicators, account, has_position)
+        ai_decision['source'] = 'AI'
+        return ai_decision
+
     def get_ai_decision(self, symbol_info, indicators, account, has_position):
         prompt = f"""Professional trading analysis for {symbol_info['name']}:
 
@@ -692,6 +818,12 @@ Only BUY/SELL if confidence > 60."""
             return 'GENERAL_SIGNAL'
     
     def scan_and_trade(self):
+        """
+        Professional trade execution with:
+        - State machine (confirmation phases)
+        - Multi-agent consensus voting
+        - Smart risk management
+        """
         if not self.is_market_open:
             return
         account = mt5.account_info()
@@ -705,6 +837,8 @@ Only BUY/SELL if confidence > 60."""
 
         for symbol_info in self.symbols:
             positions = mt5.positions_get(symbol=symbol_info['name'])
+
+            # PHASE 1: Manage existing positions
             if positions:
                 for pos in positions:
                     self.manage_position(pos, symbol_info)
@@ -715,35 +849,84 @@ Only BUY/SELL if confidence > 60."""
                         self.attempt_grid_trade(pos, symbol_info, decision.get('confidence', 0))
                 continue
 
+            # Check economic calendar (Phase 1.5: Avoid news trades)
+            self.economic_calendar.maybe_refresh()
+            if self.economic_calendar.should_skip_trade(symbol_info['name']):
+                logger.info(f"Skipping {symbol_info['name']} due to economic event")
+                continue
+
+            # PHASE 2: Detect new signals
             indicators = self.calculate_indicators(symbol_info['name'])
             if not indicators:
                 continue
 
-            # Detect market regime for this symbol
+            # Get market regime
             rates = mt5.copy_rates_from_pos(symbol_info['name'], mt5.TIMEFRAME_H1, 0, 100)
             regime_info = self.regime_detector.detect_regime(symbol_info['name'], rates, indicators) if rates is not None else {}
 
-            decision = self.get_ai_decision(symbol_info, indicators, account, False)
+            # Get hybrid decision (plugins first, fallback to AI)
+            decision = self.get_hybrid_decision(symbol_info, indicators, account, False)
 
             # Adjust confidence based on learned patterns
-            if self.historian:
-                setup_type = self._extract_setup_type(decision.get('reasoning', ''))
-                adjusted_confidence = decision.get('confidence', 50)
-                learned_threshold = self.historian.get_setup_confidence(setup_type)
-                if self.historian.should_skip_setup(setup_type):
+            adjusted_confidence = decision.get('confidence', 50)
+            setup_type = self._extract_setup_type(decision.get('reasoning', ''))
+
+            # ML feedback: Apply confidence adjustment based on historical performance
+            if self.ml_analyzer:
+                ml_adjustment = self.ml_analyzer.get_confidence_adjustment(
+                    setup_type, symbol_info['name'], regime_info.get('regime', 'UNKNOWN')
+                )
+                adjusted_confidence = adjusted_confidence * ml_adjustment
+                logger.info(f"ML adjustment for {symbol_info['name']}: {adjusted_confidence:.0f}% (multiplier: {ml_adjustment:.2f}x)")
+
+                # Skip if poor historical performance
+                if self.ml_analyzer.should_skip_setup(setup_type):
                     logger.info(f"Skipping {setup_type} for {symbol_info['name']} - poor historical win rate")
                     continue
-            else:
-                adjusted_confidence = decision.get('confidence', 50)
 
-            min_confidence = 50
-            if decision and decision.get('action') in ['BUY', 'SELL'] and adjusted_confidence >= min_confidence:
-                # Check if we should defer this trade - wait for better opportunity
+            # PHASE 2.5: Multi-Timeframe Confirmation
+            mtf_decision = None
+            if decision and decision.get('action') in ['BUY', 'SELL']:
+                mtf_decision = self.mtf_analyzer.analyze_signal(
+                    symbol_info['name'],
+                    decision.get('action'),
+                    rates,  # H1 rates from earlier
+                    indicators
+                )
+                self.mtf_analyzer.log_analysis(mtf_decision)
+
+                # Apply multi-timeframe confidence adjustment
+                adjusted_confidence = adjusted_confidence * mtf_decision.confidence_adjustment
+                logger.info(f"MTF adjustment for {symbol_info['name']}: {adjusted_confidence:.0f}% (multiplier: {mtf_decision.confidence_adjustment:.2f}x)")
+
+                # Skip if multi-timeframe analysis suggests not to proceed
+                if not mtf_decision.should_proceed:
+                    logger.info(f"Skipping {symbol_info['name']}: Multi-timeframe conflict detected")
+                    continue
+
+            # PHASE 3: Consensus voting on new signals
+            if decision and decision.get('action') in ['BUY', 'SELL'] and adjusted_confidence >= 50:
+                # Collect opinions from multiple systems
+                opinions = self.collect_consensus_opinions(
+                    symbol_info, indicators, decision, regime_info, all_positions
+                )
+
+                # Reach consensus
+                consensus = self.consensus_engine.collect_opinions(symbol_info['name'], opinions)
+                self.consensus_engine.log_consensus(consensus)
+
+                # Skip if no consensus
+                if not consensus.should_execute:
+                    if consensus.verdict.value == "DISAGREEMENT":
+                        logger.warning(f"⚠️ Agent disagreement on {symbol_info['name']} - skipping")
+                    continue
+
+                # Check if we should defer this trade
                 if self.should_defer_trade(adjusted_confidence, symbol_info['name'], all_positions):
                     logger.info(f"Trade deferred for {symbol_info['name']} - waiting for better setup")
                     continue
 
-                # Check correlation risk BEFORE opening trade to prevent too many correlated positions
+                # Check correlation risk
                 positions_dict = [{'symbol': p.symbol} for p in all_positions]
                 corr_exceeded, corr_reason = self.risk_manager.check_correlation_risk(
                     positions_dict, self.max_correlated
@@ -752,76 +935,112 @@ Only BUY/SELL if confidence > 60."""
                     logger.warning(f"Skipping {symbol_info['name']}: {corr_reason}")
                     continue
 
-                # Calculate risk/reward ratio for dynamic position sizing
-                risk_reward_ratio = None
-                if decision.get('stop_loss') and decision.get('take_profit'):
-                    try:
-                        risk = abs(decision['entry_price'] - decision['stop_loss'])
-                        reward = abs(decision['take_profit'] - decision['entry_price'])
-                        risk_reward_ratio = reward / risk if risk > 0 else 1.0
-                    except:
-                        risk_reward_ratio = None
+                # PHASE 4: Arm setup in state machine (wait for confirmation)
+                self.state_machine.detect_signal(symbol_info['name'], {
+                    'action': decision['action'],
+                    'entry_price': decision.get('entry_price', 0),
+                    'stop_loss': decision.get('stop_loss', 0),
+                    'take_profit': decision.get('take_profit', 0),
+                    'confidence': consensus.consensus_confidence,
+                    'reasoning': consensus.reasoning,
+                    'regime': regime_info.get('regime', 'UNKNOWN')
+                })
 
-                lot, risk_pct = self.calculate_lot_size(symbol_info, adjusted_confidence, account.balance, indicators['atr'], risk_reward_ratio=risk_reward_ratio)
-
-                # Apply position size adjustment based on regime
-                regime_size_adjustment = regime_info.get('regime', 'UNKNOWN')
-                if regime_size_adjustment == 'VOLATILE':
-                    lot *= 0.7  # 30% smaller in volatile markets
-                    logger.info(f"Reducing lot size by 30% due to volatile regime")
-
+            # PHASE 5: Monitor pending setups (confirmation → entry window → execution)
+            if symbol_info['name'] in self.state_machine.pending_setups:
+                setup = self.state_machine.pending_setups[symbol_info['name']]
                 tick = mt5.symbol_info_tick(symbol_info['name'])
                 if not tick:
                     continue
 
-                # Check if we should swap a position for this one
-                if len(all_positions) >= 5:
-                    should_swap, ticket_to_close = self.position_optimizer.should_swap_for_new_trade(
-                        all_positions, adjusted_confidence
-                    )
-                    if should_swap and ticket_to_close:
-                        logger.info(f"Swapping position {ticket_to_close} for new {decision['action']} signal")
-                        self.close_position(ticket_to_close, "Position swap for better opportunity")
-                        time.sleep(1)
+                current_price = tick.ask if setup.action == 'BUY' else tick.bid
 
-                # Set SL/TP with regime adjustment
-                if decision['action'] == 'BUY':
-                    price = tick.ask
-                    order_type = mt5.ORDER_TYPE_BUY
-                    base_sl = indicators['support'] - indicators['atr']
-                    base_tp = indicators['resistance'] + indicators['atr']
-                else:
-                    price = tick.bid
-                    order_type = mt5.ORDER_TYPE_SELL
-                    base_sl = indicators['resistance'] + indicators['atr']
-                    base_tp = indicators['support'] - indicators['atr']
+                # Check for pullback/confirmation
+                confirm_result = self.state_machine.process_confirmation(
+                    symbol_info['name'], current_price, "UP"  # Would get from candle analysis
+                )
 
-                # Apply regime adjustments to SL/TP
-                if regime_info:
-                    sl_multiple = regime_info.get('suggested_sl_multiple', 1.0)
-                    tp_multiple = regime_info.get('suggested_tp_multiple', 1.5)
-                    atr_adjusted = indicators['atr'] * (sl_multiple / tp_multiple)  # Adjust ATR scaling
-                    if decision['action'] == 'BUY':
-                        sl = indicators['support'] - (atr_adjusted * sl_multiple)
-                        tp = indicators['resistance'] + (atr_adjusted * tp_multiple)
-                    else:
-                        sl = indicators['resistance'] + (atr_adjusted * sl_multiple)
-                        tp = indicators['support'] - (atr_adjusted * tp_multiple)
-                else:
-                    sl = base_sl
-                    tp = base_tp
+                if confirm_result['ready_to_enter']:
+                    setup = confirm_result['setup']
+                    # Now check for breakout entry
+                    entry_result = self.state_machine.check_entry_window(symbol_info['name'], current_price)
 
-                request = {
-                    "action": mt5.TRADE_ACTION_DEAL, "symbol": symbol_info['name'], "volume": lot,
-                    "type": order_type, "price": price, "sl": round(sl, 5), "tp": round(tp, 5),
-                    "deviation": 20, "magic": 987654, "comment": f"Ultimate_{decision['action']}",
-                    "type_filling": mt5.ORDER_FILLING_IOC,
-                }
-                result = mt5.order_send(request)
-                if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
-                    regime_note = f" [{regime_info.get('regime', 'N/A')}]" if regime_info else ""
-                    self.send(f"🔥 {decision['action']} {lot} {symbol_info['name']} @ {price:.3f}{regime_note}\nRisk: {risk_pct:.1f}% | SL: {sl:.3f} | TP: {tp:.3f}\n{decision.get('reasoning', '')[:100]}")
-                time.sleep(3)
+                    if entry_result['should_enter']:
+                        setup = entry_result['setup']
+                        # Execute the trade
+                        self._execute_confirmed_trade(setup, symbol_info, indicators, regime_info, account, all_positions)
+                        self.state_machine.close_setup(symbol_info['name'])
+
+                time.sleep(1)
+
+    def _execute_confirmed_trade(self, setup, symbol_info, indicators, regime_info, account, all_positions):
+        """Execute a trade that passed all confirmation phases"""
+        # Calculate risk/reward ratio
+        risk_reward_ratio = None
+        if setup.stop_loss and setup.take_profit:
+            try:
+                risk = abs(setup.entry_price - setup.stop_loss)
+                reward = abs(setup.take_profit - setup.entry_price)
+                risk_reward_ratio = reward / risk if risk > 0 else 1.0
+            except:
+                risk_reward_ratio = None
+
+        lot, risk_pct = self.calculate_lot_size(
+            symbol_info, setup.confidence, account.balance,
+            indicators['atr'], risk_reward_ratio=risk_reward_ratio
+        )
+
+        # Apply regime adjustment
+        if setup.regime == 'VOLATILE':
+            lot *= 0.7
+            logger.info(f"Reducing lot size by 30% due to volatile regime")
+
+        tick = mt5.symbol_info_tick(symbol_info['name'])
+        if not tick:
+            return
+
+        # Swap if needed
+        if len(all_positions) >= 5:
+            should_swap, ticket_to_close = self.position_optimizer.should_swap_for_new_trade(
+                all_positions, setup.confidence
+            )
+            if should_swap and ticket_to_close:
+                logger.info(f"Swapping position {ticket_to_close} for {setup.action} signal")
+                self.close_position(ticket_to_close, "Position swap for better opportunity")
+                time.sleep(1)
+
+        # Set order parameters
+        if setup.action == 'BUY':
+            price = tick.ask
+            order_type = mt5.ORDER_TYPE_BUY
+        else:
+            price = tick.bid
+            order_type = mt5.ORDER_TYPE_SELL
+
+        request = {
+            "action": mt5.TRADE_ACTION_DEAL,
+            "symbol": symbol_info['name'],
+            "volume": lot,
+            "type": order_type,
+            "price": price,
+            "sl": round(setup.stop_loss, 5),
+            "tp": round(setup.take_profit, 5),
+            "deviation": 20,
+            "magic": 987654,
+            "comment": f"Ultimate_{setup.action}_Confirmed",
+            "type_filling": mt5.ORDER_FILLING_IOC,
+        }
+
+        result = mt5.order_send(request)
+        if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
+            regime_note = f" [{setup.regime}]"
+            self.send(
+                f"✅ CONFIRMED ENTRY: {setup.action} {lot} {symbol_info['name']} @ {price:.3f}{regime_note}\n"
+                f"Risk: {risk_pct:.1f}% | SL: {setup.stop_loss:.3f} | TP: {setup.take_profit:.3f}\n"
+                f"Consensus: {setup.confidence:.0f}%\n{setup.reasoning[:80]}"
+            )
+            logger.info(f"🎯 Trade executed after confirmation phase: {symbol_info['name']} {setup.action}")
+        time.sleep(3)
     
     def run(self):
         logger.info("Ultimate trader running in background mode (Telegram disabled)")
