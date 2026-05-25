@@ -721,7 +721,7 @@ Only BUY/SELL if confidence > 60."""
 
             # Detect market regime for this symbol
             rates = mt5.copy_rates_from_pos(symbol_info['name'], mt5.TIMEFRAME_H1, 0, 100)
-            regime_info = self.regime_detector.detect_regime(symbol_info['name'], rates, indicators) if rates else {}
+            regime_info = self.regime_detector.detect_regime(symbol_info['name'], rates, indicators) if rates is not None else {}
 
             decision = self.get_ai_decision(symbol_info, indicators, account, False)
 
