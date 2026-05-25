@@ -927,9 +927,9 @@ Only BUY/SELL if confidence > 60."""
                     continue
 
                 # Check correlation risk
-                positions_dict = [{'symbol': p.symbol} for p in all_positions]
+                # all_positions already contains dicts from position_optimizer, not MT5 objects
                 corr_exceeded, corr_reason = self.risk_manager.check_correlation_risk(
-                    positions_dict, self.max_correlated
+                    all_positions, self.max_correlated
                 )
                 if corr_exceeded:
                     logger.warning(f"Skipping {symbol_info['name']}: {corr_reason}")
