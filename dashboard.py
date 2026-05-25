@@ -146,10 +146,11 @@ def execute_trade():
         return jsonify({'success': False, 'error': 'Invalid action'})
     
     result = mt5.order_send(request)
-    if result.retcode == mt5.TRADE_RETCODE_DONE:
+    if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
         return jsonify({'success': True, 'order': result.order})
     else:
-        return jsonify({'success': False, 'error': result.comment})
+        error = result.comment if result is not None else 'Order send failed'
+        return jsonify({'success': False, 'error': error})
 
 @app.route('/api/close/<int:ticket>', methods=['POST'])
 def close_position(ticket):
@@ -173,10 +174,11 @@ def close_position(ticket):
     }
     
     result = mt5.order_send(request)
-    if result.retcode == mt5.TRADE_RETCODE_DONE:
+    if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
         return jsonify({'success': True})
     else:
-        return jsonify({'success': False, 'error': result.comment})
+        error = result.comment if result is not None else 'Order send failed'
+        return jsonify({'success': False, 'error': error})
 
 # Create templates folder and HTML
 TEMPLATES_DIR = Path(__file__).parent / 'templates'

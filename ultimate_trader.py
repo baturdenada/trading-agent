@@ -448,7 +448,7 @@ Only BUY/SELL if confidence > 60."""
             "comment": f"AI_Close: {reason[:50]}", "type_filling": mt5.ORDER_FILLING_IOC,
         }
         result = mt5.order_send(request)
-        if result.retcode == mt5.TRADE_RETCODE_DONE:
+        if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
             # Log trade to historian for learning
             try:
                 win = pos.profit > 0
@@ -809,7 +809,7 @@ Only BUY/SELL if confidence > 60."""
                     "type_filling": mt5.ORDER_FILLING_IOC,
                 }
                 result = mt5.order_send(request)
-                if result.retcode == mt5.TRADE_RETCODE_DONE:
+                if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
                     regime_note = f" [{regime_info.get('regime', 'N/A')}]" if regime_info else ""
                     self.send(f"🔥 {decision['action']} {lot} {symbol_info['name']} @ {price:.3f}{regime_note}\nRisk: {risk_pct:.1f}% | SL: {sl:.3f} | TP: {tp:.3f}\n{decision.get('reasoning', '')[:100]}")
                 time.sleep(3)

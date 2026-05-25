@@ -337,11 +337,12 @@ Entry Strategy Rules:
         }
         
         result = mt5.order_send(request)
-        if result.retcode == mt5.TRADE_RETCODE_DONE:
+        if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
             self.send(f"📌 LIMIT {signal['action']} {lot} {symbol}\nEntry: ${price:.3f}\nSL: ${sl:.3f} | TP: ${tp:.3f}\n{signal['reasoning'][:80]}")
             return True
         else:
-            logger.error(f"Limit order failed: {result.comment}")
+            error = result.comment if result is not None else 'Order send failed'
+            logger.error(f"Limit order failed: {error}")
             return False
     
     def place_stop_order(self, symbol_info, signal, price, sl, tp, lot):
@@ -366,11 +367,12 @@ Entry Strategy Rules:
         }
         
         result = mt5.order_send(request)
-        if result.retcode == mt5.TRADE_RETCODE_DONE:
+        if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
             self.send(f"📊 STOP {signal['action']} {lot} {symbol}\nTrigger: ${price:.3f}\nSL: ${sl:.3f} | TP: ${tp:.3f}\n{signal['reasoning'][:80]}")
             return True
         else:
-            logger.error(f"Stop order failed: {result.comment}")
+            error = result.comment if result is not None else 'Order send failed'
+            logger.error(f"Stop order failed: {error}")
             return False
     
     def place_market_order(self, symbol_info, signal, price, sl, tp, lot):
@@ -394,11 +396,12 @@ Entry Strategy Rules:
         }
         
         result = mt5.order_send(request)
-        if result.retcode == mt5.TRADE_RETCODE_DONE:
+        if result is not None and result.retcode == mt5.TRADE_RETCODE_DONE:
             self.send(f"⚡ MARKET {signal['action']} {lot} {symbol}\nPrice: ${price:.3f}\nSL: ${sl:.3f} | TP: ${tp:.3f}\n{signal['reasoning'][:80]}")
             return True
         else:
-            logger.error(f"Market order failed: {result.comment}")
+            error = result.comment if result is not None else 'Order send failed'
+            logger.error(f"Market order failed: {error}")
             return False
     
     def execute_trade(self, symbol_info, signal):
