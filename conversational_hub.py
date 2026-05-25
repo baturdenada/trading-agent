@@ -599,19 +599,22 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             # Default: try conversation
             return self.handle_conversation(user_input)
 
+    def run(self):
+        """Main agent loop - keep running to handle commands"""
+        logger.info("=" * 80)
+        logger.info("CONVERSATIONAL HUB ONLINE")
+        logger.info("=" * 80)
+        logger.info("Ready to process natural language trading commands")
+        logger.info("Intelligence Hub will route commands here")
+
+        import time
+        try:
+            while True:
+                # Keep alive - Intelligence Hub routes commands here
+                time.sleep(60)
+        except KeyboardInterrupt:
+            logger.info("Conversational Hub stopped")
+
 if __name__ == "__main__":
     hub = ConversationalHub()
-
-    # Test inputs
-    test_inputs = [
-        "Analyze gold",
-        "How are you?",
-        "Buy 0.5 eurusd",
-        "What's the current situation in XAUUSD",
-        "Show me risk analysis"
-    ]
-
-    for test_input in test_inputs:
-        print(f"\nUser: {test_input}")
-        response = hub.process_input(test_input)
-        print(f"Bot: {response}")
+    hub.run()
