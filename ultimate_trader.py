@@ -112,8 +112,7 @@ class UltimateTrader:
             logger.error(f"Risk Manager initialization failed: {e}")
             self.risk_manager = None
 
-        logger.info("ULTIMATE TRADER INITIALIZED")
-        self.send("🔥 ULTIMATE TRADER ONLINE\nProfessional trading brain active\nDynamic management | Trailing stops | Self-learning | Risk Management\nCommands: status, positions, risk, help")
+        logger.info("ULTIMATE TRADER INITIALIZED - Ready for trading operations")
     
     def send(self, msg):
         send_telegram_reliable(self.telegram_token, self.telegram_chat_id, msg, max_retries=2)
