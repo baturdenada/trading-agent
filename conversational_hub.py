@@ -208,15 +208,29 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             if limit_exceeded:
                 return reason
 
+            # Validate symbol exists
+            symbol_info = mt5.symbol_info(symbol)
+            if symbol_info is None:
+                return f"Symbol {symbol} not found on MT5. Available: XAUUSD, EURUSD, GBPUSD, etc."
+
+            if not symbol_info.trade_mode or symbol_info.trade_mode == 'DISABLED':
+                return f"Trading disabled for {symbol}"
+
             # Place trade
             order_type = mt5.ORDER_TYPE_BUY if action.upper() == "BUY" else mt5.ORDER_TYPE_SELL
+
+            # Use current ask/bid instead of indicator price
+            if action.upper() == "BUY":
+                current_price = symbol_info.ask
+            else:
+                current_price = symbol_info.bid
 
             request = {
                 "action": mt5.TRADE_ACTION_DEAL,
                 "symbol": symbol,
                 "volume": quantity,
                 "type": order_type,
-                "price": indicators['price'],
+                "price": current_price,
                 "sl": round(sl, 5),
                 "tp": round(tp, 5),
                 "deviation": 20,
@@ -228,19 +242,15 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             result = mt5.order_send(request)
 
             if result is None:
-                # Ensure MT5 is connected
-                if trader.mt5_manager.ensure_connected():
-                    result = mt5.order_send(request)
-                else:
-                    return "MT5 connection lost"
+                # Try to get last error
+                last_error = mt5.last_error()
+                return f"MT5 Error: {last_error} - Try a different symbol or check MT5 account"
 
-            if result and result.retcode == mt5.TRADE_RETCODE_DONE:
-                msg = f"TRADE OPENED\n{action.upper()} {quantity}L {symbol}\nEntry: ${indicators['price']:.4f}\nSL: ${sl:.4f}\nTP: ${tp:.4f}"
+            if result.retcode == mt5.TRADE_RETCODE_DONE:
+                msg = f"✅ TRADE OPENED\n{action.upper()} {quantity}L {symbol}\nEntry: ${current_price:.4f}\nSL: ${sl:.4f}\nTP: ${tp:.4f}"
                 return msg
-            elif result:
-                return f"Trade failed: {result.comment}"
             else:
-                return "Trade execution failed - no response from MT5"
+                return f"Trade failed ({result.retcode}): {result.comment if hasattr(result, 'comment') else 'Unknown error'}"
 
         except Exception as e:
             logger.error(f"Trade execution error: {e}")
