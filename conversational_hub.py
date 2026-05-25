@@ -53,6 +53,12 @@ class ConversationalHub:
         """Send message via Telegram"""
         send_telegram_reliable(self.telegram_token, self.telegram_chat_id, msg, max_retries=2)
 
+    def normalize_symbol(self, symbol):
+        """Remove .s suffix for MT5 API calls"""
+        if symbol and symbol.endswith('.s'):
+            return symbol[:-2]
+        return symbol
+
     def parse_symbol_from_text(self, text):
         """Convert natural language like 'dollar franc' to 'USDCHF.s'"""
         text_lower = text.lower()
@@ -250,12 +256,15 @@ Keep responses concise for Telegram (max 400 chars per message)."""
         """Handle trade execution request"""
         from ultimate_trader import UltimateTrader
         try:
+            # Normalize symbol for MT5 API (remove .s suffix)
+            mt5_symbol = self.normalize_symbol(symbol)
+
             trader = UltimateTrader()
 
             # Get current price and indicators
-            indicators = trader.calculate_indicators(symbol)
+            indicators = trader.calculate_indicators(mt5_symbol)
             if not indicators:
-                return f"Could not get market data for {symbol}"
+                return f"Could not get market data for {mt5_symbol}"
 
             # Convert SL/TP to float if provided
             if sl:
@@ -290,12 +299,12 @@ Keep responses concise for Telegram (max 400 chars per message)."""
                 return reason
 
             # Validate symbol exists
-            symbol_info = mt5.symbol_info(symbol)
+            symbol_info = mt5.symbol_info(mt5_symbol)
             if symbol_info is None:
-                return f"Symbol {symbol} not found on MT5. Available: XAUUSD, EURUSD, GBPUSD, etc."
+                return f"Symbol {mt5_symbol} not found on MT5. Available: XAUUSD, EURUSD, GBPUSD, etc."
 
             if not symbol_info.trade_mode or symbol_info.trade_mode == 'DISABLED':
-                return f"Trading disabled for {symbol}"
+                return f"Trading disabled for {mt5_symbol}"
 
             # Validate and adjust volume - ensure all values are float
             min_volume = float(getattr(symbol_info, 'volume_min', None) or 0.1)
@@ -330,7 +339,7 @@ Keep responses concise for Telegram (max 400 chars per message)."""
 
             request = {
                 "action": mt5.TRADE_ACTION_DEAL,
-                "symbol": symbol,
+                "symbol": mt5_symbol,
                 "volume": quantity,
                 "type": order_type,
                 "price": current_price,
@@ -350,7 +359,7 @@ Keep responses concise for Telegram (max 400 chars per message)."""
                 return f"MT5 Error: {last_error} - Try a different symbol or check MT5 account"
 
             if result.retcode == mt5.TRADE_RETCODE_DONE:
-                msg = f"✅ TRADE OPENED\n{action.upper()} {quantity}L {symbol}\nEntry: ${current_price:.4f}\nSL: ${sl:.4f}\nTP: ${tp:.4f}"
+                msg = f"✅ TRADE OPENED\n{action.upper()} {quantity}L {mt5_symbol}\nEntry: ${current_price:.4f}\nSL: ${sl:.4f}\nTP: ${tp:.4f}"
                 return msg
             else:
                 return f"Trade failed ({result.retcode}): {result.comment if hasattr(result, 'comment') else 'Unknown error'}"
@@ -494,22 +503,25 @@ Keep responses concise for Telegram (max 400 chars per message)."""
         if not symbol:
             return f"❌ Couldn't recognize symbol from: '{symbol_text}'\n\nTry: gold, silver, euro, dollar franc, dollar yen, dollar cad"
 
+        # Normalize symbol for MT5 API
+        mt5_symbol = self.normalize_symbol(symbol)
+
         # Find the position
         try:
-            positions = mt5.positions_get(symbol=symbol)
+            positions = mt5.positions_get(symbol=mt5_symbol)
             if not positions:
-                return f"❌ No open position for {symbol}"
+                return f"❌ No open position for {mt5_symbol}"
 
             # Close the position
             position = positions[0]
-            tick = mt5.symbol_info_tick(symbol)
+            tick = mt5.symbol_info_tick(mt5_symbol)
             if not tick:
-                return f"❌ Could not get price for {symbol}"
+                return f"❌ Could not get price for {mt5_symbol}"
 
             order_type = mt5.ORDER_TYPE_SELL if position.type == 0 else mt5.ORDER_TYPE_BUY
             request = {
                 "action": mt5.TRADE_ACTION_DEAL,
-                "symbol": symbol,
+                "symbol": mt5_symbol,
                 "volume": position.volume,
                 "type": order_type,
                 "position": position.ticket,
@@ -522,17 +534,17 @@ Keep responses concise for Telegram (max 400 chars per message)."""
 
             if result is None:
                 last_error = mt5.last_error()
-                return f"❌ Order send failed for {symbol}: {last_error}"
+                return f"❌ Order send failed for {mt5_symbol}: {last_error}"
 
             if result.retcode == mt5.TRADE_RETCODE_DONE:
-                return f"✅ Closed {symbol} | P&L: ${position.profit:+.2f}"
+                return f"✅ Closed {mt5_symbol} | P&L: ${position.profit:+.2f}"
             else:
                 error_msg = result.comment if hasattr(result, 'comment') else 'Unknown error'
-                return f"❌ Close failed for {symbol}: {error_msg}"
+                return f"❌ Close failed for {mt5_symbol}: {error_msg}"
 
         except Exception as e:
             logger.error(f"Close position exception: {e}")
-            return f"❌ Error closing {symbol}: {str(e)[:100]}"
+            return f"❌ Error closing {mt5_symbol}: {str(e)[:100]}"
 
     def process_input(self, user_input):
         """Main entry point - process any user input intelligently"""
