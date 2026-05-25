@@ -1,0 +1,5002 @@
+[
+  {
+    "ticket": 29833148,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:14:44",
+    "action": "BUY",
+    "volume": 0.46,
+    "price": 4553.48,
+    "profit": 34.5,
+    "is_win": true
+  },
+  {
+    "ticket": 29833382,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:19:08",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4554.98,
+    "profit": 4.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29833426,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:27:30",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4552.63,
+    "profit": 4.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29833437,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:28:05",
+    "action": "BUY",
+    "volume": 0.46,
+    "price": 4552.01,
+    "profit": 18.86,
+    "is_win": true
+  },
+  {
+    "ticket": 29833665,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:29:23",
+    "action": "SELL",
+    "volume": 0.46,
+    "price": 4554.27,
+    "profit": 38.64,
+    "is_win": true
+  },
+  {
+    "ticket": 29833719,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:33:11",
+    "action": "BUY",
+    "volume": 0.47,
+    "price": 4550.12,
+    "profit": 14.1,
+    "is_win": true
+  },
+  {
+    "ticket": 29833741,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:37:33",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4550.29,
+    "profit": 3.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29833743,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:38:19",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4549.58,
+    "profit": 2.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29833762,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:40:37",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4550.08,
+    "profit": 2.24,
+    "is_win": true
+  },
+  {
+    "ticket": 29833769,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:41:03",
+    "action": "SELL",
+    "volume": 0.47,
+    "price": 4550.62,
+    "profit": 6.58,
+    "is_win": true
+  },
+  {
+    "ticket": 29833794,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:41:31",
+    "action": "BUY",
+    "volume": 0.47,
+    "price": 4548.98,
+    "profit": 30.55,
+    "is_win": true
+  },
+  {
+    "ticket": 29834038,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:49:33",
+    "action": "BUY",
+    "volume": 0.47,
+    "price": 4547.85,
+    "profit": 13.63,
+    "is_win": true
+  },
+  {
+    "ticket": 29834201,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T20:55:15",
+    "action": "BUY",
+    "volume": 0.47,
+    "price": 4546.57,
+    "profit": 24.91,
+    "is_win": true
+  },
+  {
+    "ticket": 29834304,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T21:00:09",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4546.81,
+    "profit": 1.6800000000000002,
+    "is_win": true
+  },
+  {
+    "ticket": 29834312,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T21:01:27",
+    "action": "BUY",
+    "volume": 0.47,
+    "price": 4545.73,
+    "profit": 16.45,
+    "is_win": true
+  },
+  {
+    "ticket": 29834439,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T21:05:39",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4546.9,
+    "profit": 4.24,
+    "is_win": true
+  },
+  {
+    "ticket": 29834457,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T21:06:46",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4544.1,
+    "profit": 4.04,
+    "is_win": true
+  },
+  {
+    "ticket": 29834459,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-18T21:06:50",
+    "action": "BUY",
+    "volume": 0.47,
+    "price": 4544.17,
+    "profit": 0.94,
+    "is_win": true
+  },
+  {
+    "ticket": 29866111,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T19:58:59",
+    "action": "SELL",
+    "volume": 0.48,
+    "price": 4508.49,
+    "profit": 15.84,
+    "is_win": true
+  },
+  {
+    "ticket": 29866124,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:01:13",
+    "action": "SELL",
+    "volume": 0.48,
+    "price": 4509.75,
+    "profit": 53.28,
+    "is_win": true
+  },
+  {
+    "ticket": 29866129,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:02:49",
+    "action": "BUY",
+    "volume": 0.48,
+    "price": 4507.45,
+    "profit": 3.84,
+    "is_win": true
+  },
+  {
+    "ticket": 29866258,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:06:03",
+    "action": "BUY",
+    "volume": 0.48,
+    "price": 4506.94,
+    "profit": 12.96,
+    "is_win": true
+  },
+  {
+    "ticket": 29866394,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:08:13",
+    "action": "SELL",
+    "volume": 0.48,
+    "price": 4507.74,
+    "profit": 21.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29866445,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:12:55",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4508.41,
+    "profit": 1.44,
+    "is_win": true
+  },
+  {
+    "ticket": 29866448,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:13:25",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4509.14,
+    "profit": 4.68,
+    "is_win": true
+  },
+  {
+    "ticket": 29866461,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:14:23",
+    "action": "SELL",
+    "volume": 0.48,
+    "price": 4509.5,
+    "profit": 17.28,
+    "is_win": true
+  },
+  {
+    "ticket": 29866697,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:17:37",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4510.13,
+    "profit": 2.36,
+    "is_win": true
+  },
+  {
+    "ticket": 29866707,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:17:57",
+    "action": "BUY",
+    "volume": 0.49,
+    "price": 4509.45,
+    "profit": 11.76,
+    "is_win": true
+  },
+  {
+    "ticket": 29866736,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:23:39",
+    "action": "BUY",
+    "volume": 0.49,
+    "price": 4506.3,
+    "profit": 24.01,
+    "is_win": true
+  },
+  {
+    "ticket": 29866742,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:24:33",
+    "action": "BUY",
+    "volume": 0.49,
+    "price": 4504.41,
+    "profit": 32.83,
+    "is_win": true
+  },
+  {
+    "ticket": 29866752,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:26:25",
+    "action": "SELL",
+    "volume": 0.49,
+    "price": 4505.26,
+    "profit": 10.29,
+    "is_win": true
+  },
+  {
+    "ticket": 29866866,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:29:05",
+    "action": "SELL",
+    "volume": 0.49,
+    "price": 4507.85,
+    "profit": 49.49,
+    "is_win": true
+  },
+  {
+    "ticket": 29866920,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:29:09",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4508.02,
+    "profit": 8.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29867010,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:30:52",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4507.83,
+    "profit": 2.35,
+    "is_win": true
+  },
+  {
+    "ticket": 29867019,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:33:00",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4507.42,
+    "profit": 2.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29867036,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:38:02",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4505.88,
+    "profit": 6.1,
+    "is_win": true
+  },
+  {
+    "ticket": 29867047,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:39:43",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4506.07,
+    "profit": 9.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29867056,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T20:40:35",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4504.95,
+    "profit": 7.9,
+    "is_win": true
+  },
+  {
+    "ticket": 29867849,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T21:09:21",
+    "action": "SELL",
+    "volume": 0.2,
+    "price": 4502.43,
+    "profit": 2.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29868188,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T21:27:23",
+    "action": "SELL",
+    "volume": 0.4,
+    "price": 4498.13,
+    "profit": -28.0,
+    "is_win": false
+  },
+  {
+    "ticket": 29868457,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T21:33:41",
+    "action": "SELL",
+    "volume": 0.4,
+    "price": 4497.9,
+    "profit": 27.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29868481,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T21:38:45",
+    "action": "SELL",
+    "volume": 0.4,
+    "price": 4498.93,
+    "profit": 35.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29868760,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T21:47:29",
+    "action": "SELL",
+    "volume": 0.4,
+    "price": 4499.15,
+    "profit": 13.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29869632,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T22:23:44",
+    "action": "SELL",
+    "volume": 0.5,
+    "price": 4488.04,
+    "profit": -1017.5,
+    "is_win": false
+  },
+  {
+    "ticket": 29869633,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T22:23:44",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4488.04,
+    "profit": -95.5,
+    "is_win": false
+  },
+  {
+    "ticket": 29869634,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T22:23:44",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4488.04,
+    "profit": -170.5,
+    "is_win": false
+  },
+  {
+    "ticket": 29869635,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T22:23:44",
+    "action": "SELL",
+    "volume": 0.2,
+    "price": 4488.04,
+    "profit": -302.8,
+    "is_win": false
+  },
+  {
+    "ticket": 29869636,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T22:23:44",
+    "action": "SELL",
+    "volume": 0.4,
+    "price": 4488.04,
+    "profit": -78.8,
+    "is_win": false
+  },
+  {
+    "ticket": 29869651,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-19T22:24:38",
+    "action": "BUY",
+    "volume": 0.34,
+    "price": 4486.99,
+    "profit": 12.92,
+    "is_win": true
+  },
+  {
+    "ticket": 29890509,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T13:40:45",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4495.53,
+    "profit": -1.71,
+    "is_win": false
+  },
+  {
+    "ticket": 29890516,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T13:41:03",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4495.38,
+    "profit": 0.81,
+    "is_win": true
+  },
+  {
+    "ticket": 29890522,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T13:41:41",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4495.45,
+    "profit": -0.06,
+    "is_win": false
+  },
+  {
+    "ticket": 29890667,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T13:45:43",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4494.35,
+    "profit": 3.7800000000000002,
+    "is_win": true
+  },
+  {
+    "ticket": 29890678,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T13:47:05",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4494.59,
+    "profit": 4.74,
+    "is_win": true
+  },
+  {
+    "ticket": 29890745,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T13:54:15",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4494.2,
+    "profit": 2.76,
+    "is_win": true
+  },
+  {
+    "ticket": 29890853,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T13:57:21",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4494.45,
+    "profit": 4.68,
+    "is_win": true
+  },
+  {
+    "ticket": 29890857,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T13:59:51",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4494.4,
+    "profit": 4.02,
+    "is_win": true
+  },
+  {
+    "ticket": 29890885,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:03:39",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4494.22,
+    "profit": 4.62,
+    "is_win": true
+  },
+  {
+    "ticket": 29891102,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:15:21",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4494.38,
+    "profit": 3.66,
+    "is_win": true
+  },
+  {
+    "ticket": 29891261,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:23:43",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4494.09,
+    "profit": 2.64,
+    "is_win": true
+  },
+  {
+    "ticket": 29891283,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:26:27",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4496.89,
+    "profit": 1.32,
+    "is_win": true
+  },
+  {
+    "ticket": 29891286,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:26:45",
+    "action": "SELL",
+    "volume": 0.34,
+    "price": 4497.03,
+    "profit": 10.88,
+    "is_win": true
+  },
+  {
+    "ticket": 29891296,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:26:57",
+    "action": "SELL",
+    "volume": 0.34,
+    "price": 4498.42,
+    "profit": 16.32,
+    "is_win": true
+  },
+  {
+    "ticket": 29891451,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:30:27",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4499.64,
+    "profit": -0.93,
+    "is_win": false
+  },
+  {
+    "ticket": 29891457,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:30:53",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4500.24,
+    "profit": 1.38,
+    "is_win": true
+  },
+  {
+    "ticket": 29891494,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:34:31",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.89,
+    "profit": 3.48,
+    "is_win": true
+  },
+  {
+    "ticket": 29891505,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:35:37",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.69,
+    "profit": 3.06,
+    "is_win": true
+  },
+  {
+    "ticket": 29891513,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:36:21",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.9,
+    "profit": 3.84,
+    "is_win": true
+  },
+  {
+    "ticket": 29891520,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:37:25",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.79,
+    "profit": 3.12,
+    "is_win": true
+  },
+  {
+    "ticket": 29891721,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:44:53",
+    "action": "SELL",
+    "volume": 0.12,
+    "price": 4495.83,
+    "profit": 9.36,
+    "is_win": true
+  },
+  {
+    "ticket": 29891737,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:47:39",
+    "action": "SELL",
+    "volume": 0.12,
+    "price": 4496.42,
+    "profit": 14.76,
+    "is_win": true
+  },
+  {
+    "ticket": 29891787,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:51:57",
+    "action": "SELL",
+    "volume": 0.24,
+    "price": 4492.11,
+    "profit": 24.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29891801,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:52:45",
+    "action": "SELL",
+    "volume": 0.12,
+    "price": 4496.7,
+    "profit": 17.04,
+    "is_win": true
+  },
+  {
+    "ticket": 29891917,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:55:19",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.56,
+    "profit": 2.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29891935,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:55:39",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.7,
+    "profit": 5.22,
+    "is_win": true
+  },
+  {
+    "ticket": 29891962,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T14:59:31",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.84,
+    "profit": 3.48,
+    "is_win": true
+  },
+  {
+    "ticket": 29891975,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:00:53",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.43,
+    "profit": 3.7199999999999998,
+    "is_win": true
+  },
+  {
+    "ticket": 29891988,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:02:41",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4500.79,
+    "profit": 2.55,
+    "is_win": true
+  },
+  {
+    "ticket": 29892029,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:06:09",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.36,
+    "profit": 2.88,
+    "is_win": true
+  },
+  {
+    "ticket": 29892051,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:08:33",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.37,
+    "profit": 4.92,
+    "is_win": true
+  },
+  {
+    "ticket": 29892237,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:16:54",
+    "action": "SELL",
+    "volume": 0.12,
+    "price": 4496.21,
+    "profit": 11.64,
+    "is_win": true
+  },
+  {
+    "ticket": 29892279,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:21:27",
+    "action": "SELL",
+    "volume": 0.12,
+    "price": 4494.83,
+    "profit": 2.88,
+    "is_win": true
+  },
+  {
+    "ticket": 29892289,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:23:03",
+    "action": "SELL",
+    "volume": 0.12,
+    "price": 4495.16,
+    "profit": 4.92,
+    "is_win": true
+  },
+  {
+    "ticket": 29892308,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:24:37",
+    "action": "SELL",
+    "volume": 0.12,
+    "price": 4496.18,
+    "profit": 9.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29892318,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:25:33",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4499.23,
+    "profit": 7.86,
+    "is_win": true
+  },
+  {
+    "ticket": 29892326,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:26:03",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4499.46,
+    "profit": 10.26,
+    "is_win": true
+  },
+  {
+    "ticket": 29892473,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:29:51",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4498.58,
+    "profit": 5.28,
+    "is_win": true
+  },
+  {
+    "ticket": 29892486,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:30:26",
+    "action": "SELL",
+    "volume": 0.34,
+    "price": 4503.46,
+    "profit": 77.86,
+    "is_win": true
+  },
+  {
+    "ticket": 29892487,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:30:26",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4503.46,
+    "profit": 9.66,
+    "is_win": true
+  },
+  {
+    "ticket": 29892543,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:33:29",
+    "action": "SELL",
+    "volume": 0.37,
+    "price": 4501.66,
+    "profit": 25.53,
+    "is_win": true
+  },
+  {
+    "ticket": 29892582,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:37:01",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4502.35,
+    "profit": 4.26,
+    "is_win": true
+  },
+  {
+    "ticket": 29892587,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:38:29",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4502.49,
+    "profit": 4.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29892591,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:39:27",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4503.9,
+    "profit": 1.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29892717,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:42:53",
+    "action": "SELL",
+    "volume": 0.06,
+    "price": 4502.38,
+    "profit": 3.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29892761,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:48:41",
+    "action": "SELL",
+    "volume": 0.03,
+    "price": 4504.36,
+    "profit": 1.02,
+    "is_win": true
+  },
+  {
+    "ticket": 29892765,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:48:59",
+    "action": "SELL",
+    "volume": 0.37,
+    "price": 4505.14,
+    "profit": 13.69,
+    "is_win": true
+  },
+  {
+    "ticket": 29892786,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:52:27",
+    "action": "BUY",
+    "volume": 0.37,
+    "price": 4501.64,
+    "profit": 9.25,
+    "is_win": true
+  },
+  {
+    "ticket": 29892798,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:53:31",
+    "action": "BUY",
+    "volume": 0.37,
+    "price": 4500.56,
+    "profit": 9.25,
+    "is_win": true
+  },
+  {
+    "ticket": 29892930,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:56:11",
+    "action": "BUY",
+    "volume": 0.03,
+    "price": 4497.67,
+    "profit": 2.01,
+    "is_win": true
+  },
+  {
+    "ticket": 29892940,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T15:56:55",
+    "action": "BUY",
+    "volume": 0.37,
+    "price": 4496.94,
+    "profit": 16.28,
+    "is_win": true
+  },
+  {
+    "ticket": 29892947,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:00:23",
+    "action": "BUY",
+    "volume": 0.03,
+    "price": 4494.91,
+    "profit": 1.02,
+    "is_win": true
+  },
+  {
+    "ticket": 29892951,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:01:15",
+    "action": "BUY",
+    "volume": 0.06,
+    "price": 4496.92,
+    "profit": 7.32,
+    "is_win": true
+  },
+  {
+    "ticket": 29892953,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:01:25",
+    "action": "BUY",
+    "volume": 0.06,
+    "price": 4497.2,
+    "profit": 3.66,
+    "is_win": true
+  },
+  {
+    "ticket": 29892954,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:01:53",
+    "action": "BUY",
+    "volume": 0.03,
+    "price": 4495.42,
+    "profit": 0.63,
+    "is_win": true
+  },
+  {
+    "ticket": 29892963,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:04:04",
+    "action": "BUY",
+    "volume": 0.12,
+    "price": 4499.58,
+    "profit": 6.24,
+    "is_win": true
+  },
+  {
+    "ticket": 29892973,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:05:20",
+    "action": "BUY",
+    "volume": 0.06,
+    "price": 4500.91,
+    "profit": -16.68,
+    "is_win": false
+  },
+  {
+    "ticket": 29892983,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:06:22",
+    "action": "BUY",
+    "volume": 0.06,
+    "price": 4499.34,
+    "profit": 9.18,
+    "is_win": true
+  },
+  {
+    "ticket": 29893002,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:06:54",
+    "action": "BUY",
+    "volume": 0.12,
+    "price": 4499.78,
+    "profit": 15.72,
+    "is_win": true
+  },
+  {
+    "ticket": 29893089,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:07:44",
+    "action": "BUY",
+    "volume": 0.06,
+    "price": 4498.0,
+    "profit": 11.28,
+    "is_win": true
+  },
+  {
+    "ticket": 29893123,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:09:48",
+    "action": "BUY",
+    "volume": 0.12,
+    "price": 4498.91,
+    "profit": 15.96,
+    "is_win": true
+  },
+  {
+    "ticket": 29893158,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:11:54",
+    "action": "BUY",
+    "volume": 0.12,
+    "price": 4499.42,
+    "profit": 15.36,
+    "is_win": true
+  },
+  {
+    "ticket": 29893166,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:13:18",
+    "action": "BUY",
+    "volume": 0.12,
+    "price": 4499.49,
+    "profit": 12.24,
+    "is_win": true
+  },
+  {
+    "ticket": 29893297,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:16:18",
+    "action": "BUY",
+    "volume": 0.24,
+    "price": 4503.36,
+    "profit": 14.64,
+    "is_win": true
+  },
+  {
+    "ticket": 29893326,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:17:50",
+    "action": "BUY",
+    "volume": 0.24,
+    "price": 4503.18,
+    "profit": 21.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29893341,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:19:24",
+    "action": "BUY",
+    "volume": 0.12,
+    "price": 4500.1,
+    "profit": 7.92,
+    "is_win": true
+  },
+  {
+    "ticket": 29893347,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:19:42",
+    "action": "BUY",
+    "volume": 0.12,
+    "price": 4499.2,
+    "profit": 15.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29893366,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:22:48",
+    "action": "BUY",
+    "volume": 0.06,
+    "price": 4496.39,
+    "profit": 4.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29893389,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:24:48",
+    "action": "BUY",
+    "volume": 0.38,
+    "price": 4494.22,
+    "profit": 5.7,
+    "is_win": true
+  },
+  {
+    "ticket": 29893390,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:24:48",
+    "action": "BUY",
+    "volume": 0.03,
+    "price": 4494.22,
+    "profit": 3.21,
+    "is_win": true
+  },
+  {
+    "ticket": 29893399,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:25:56",
+    "action": "BUY",
+    "volume": 0.39,
+    "price": 4494.02,
+    "profit": 8.19,
+    "is_win": true
+  },
+  {
+    "ticket": 29893406,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:26:25",
+    "action": "BUY",
+    "volume": 0.39,
+    "price": 4492.48,
+    "profit": 21.06,
+    "is_win": true
+  },
+  {
+    "ticket": 29893445,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:28:50",
+    "action": "BUY",
+    "volume": 0.39,
+    "price": 4490.69,
+    "profit": 20.28,
+    "is_win": true
+  },
+  {
+    "ticket": 29893549,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:30:01",
+    "action": "BUY",
+    "volume": 0.39,
+    "price": 4488.85,
+    "profit": 19.89,
+    "is_win": true
+  },
+  {
+    "ticket": 29893555,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:30:06",
+    "action": "SELL",
+    "volume": 0.4,
+    "price": 4490.84,
+    "profit": 48.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29893603,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:34:00",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4492.04,
+    "profit": 8.32,
+    "is_win": true
+  },
+  {
+    "ticket": 29893607,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:35:30",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4491.31,
+    "profit": -3.2,
+    "is_win": false
+  },
+  {
+    "ticket": 29893621,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:36:34",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4490.72,
+    "profit": 4.96,
+    "is_win": true
+  },
+  {
+    "ticket": 29893625,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:36:46",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4490.89,
+    "profit": 5.36,
+    "is_win": true
+  },
+  {
+    "ticket": 29893634,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:37:26",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4487.88,
+    "profit": 13.28,
+    "is_win": true
+  },
+  {
+    "ticket": 29893643,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:38:02",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4487.33,
+    "profit": 19.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29893681,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:41:00",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4488.15,
+    "profit": 13.44,
+    "is_win": true
+  },
+  {
+    "ticket": 29893826,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:43:48",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4486.85,
+    "profit": -4.8,
+    "is_win": false
+  },
+  {
+    "ticket": 29893844,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:44:51",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4490.04,
+    "profit": 40.64,
+    "is_win": true
+  },
+  {
+    "ticket": 29893849,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:45:15",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4491.04,
+    "profit": 7.44,
+    "is_win": true
+  },
+  {
+    "ticket": 29893853,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:45:51",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4491.13,
+    "profit": 7.52,
+    "is_win": true
+  },
+  {
+    "ticket": 29893863,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:47:01",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4490.8,
+    "profit": 4.48,
+    "is_win": true
+  },
+  {
+    "ticket": 29893865,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:47:33",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4490.9,
+    "profit": 4.72,
+    "is_win": true
+  },
+  {
+    "ticket": 29893868,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:47:41",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4492.08,
+    "profit": 2.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29893893,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:49:58",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4487.3,
+    "profit": 7.36,
+    "is_win": true
+  },
+  {
+    "ticket": 29893897,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:50:20",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4488.36,
+    "profit": 18.88,
+    "is_win": true
+  },
+  {
+    "ticket": 29893914,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:51:50",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4487.1,
+    "profit": 6.5600000000000005,
+    "is_win": true
+  },
+  {
+    "ticket": 29893932,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:53:02",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4487.8,
+    "profit": 10.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29893947,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:54:12",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4487.8,
+    "profit": 9.76,
+    "is_win": true
+  },
+  {
+    "ticket": 29894084,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T16:58:34",
+    "action": "SELL",
+    "volume": 0.32,
+    "price": 4483.34,
+    "profit": 19.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29894096,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:00:00",
+    "action": "SELL",
+    "volume": 0.32,
+    "price": 4484.73,
+    "profit": 54.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29894101,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:00:38",
+    "action": "SELL",
+    "volume": 0.32,
+    "price": 4484.12,
+    "profit": 27.52,
+    "is_win": true
+  },
+  {
+    "ticket": 29894107,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:01:00",
+    "action": "SELL",
+    "volume": 0.32,
+    "price": 4485.03,
+    "profit": 50.56,
+    "is_win": true
+  },
+  {
+    "ticket": 29894209,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:11:04",
+    "action": "SELL",
+    "volume": 0.4,
+    "price": 4472.59,
+    "profit": -824.0,
+    "is_win": false
+  },
+  {
+    "ticket": 29894210,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:11:04",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4472.59,
+    "profit": -78.04,
+    "is_win": false
+  },
+  {
+    "ticket": 29894211,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:11:04",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4472.59,
+    "profit": -135.28,
+    "is_win": false
+  },
+  {
+    "ticket": 29894212,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:11:04",
+    "action": "SELL",
+    "volume": 0.16,
+    "price": 4472.59,
+    "profit": -231.52,
+    "is_win": false
+  },
+  {
+    "ticket": 29894213,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:11:04",
+    "action": "SELL",
+    "volume": 0.32,
+    "price": 4472.59,
+    "profit": -340.8,
+    "is_win": false
+  },
+  {
+    "ticket": 29894220,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:11:34",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4473.04,
+    "profit": 0.86,
+    "is_win": true
+  },
+  {
+    "ticket": 29894227,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:12:08",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4473.2,
+    "profit": 0.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29894234,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:12:23",
+    "action": "BUY",
+    "volume": 0.27,
+    "price": 4471.86,
+    "profit": 16.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29894239,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:12:26",
+    "action": "BUY",
+    "volume": 0.27,
+    "price": 4471.1,
+    "profit": 16.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29894351,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:13:25",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4468.47,
+    "profit": 0.74,
+    "is_win": true
+  },
+  {
+    "ticket": 29894355,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:13:37",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4469.17,
+    "profit": 2.2800000000000002,
+    "is_win": true
+  },
+  {
+    "ticket": 29894364,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:13:51",
+    "action": "SELL",
+    "volume": 0.27,
+    "price": 4469.7,
+    "profit": 2.9699999999999998,
+    "is_win": true
+  },
+  {
+    "ticket": 29894378,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:14:05",
+    "action": "SELL",
+    "volume": 0.27,
+    "price": 4473.22,
+    "profit": 58.05,
+    "is_win": true
+  },
+  {
+    "ticket": 29894392,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:14:27",
+    "action": "BUY",
+    "volume": 0.28,
+    "price": 4475.35,
+    "profit": 35.84,
+    "is_win": true
+  },
+  {
+    "ticket": 29894393,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:14:28",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4475.4,
+    "profit": 3.86,
+    "is_win": true
+  },
+  {
+    "ticket": 29894414,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:15:13",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4477.65,
+    "profit": 1.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29894417,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:15:17",
+    "action": "SELL",
+    "volume": 0.28,
+    "price": 4479.7,
+    "profit": 44.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29894422,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:15:33",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4481.05,
+    "profit": 0.36,
+    "is_win": true
+  },
+  {
+    "ticket": 29894430,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:15:55",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4482.14,
+    "profit": 5.72,
+    "is_win": true
+  },
+  {
+    "ticket": 29894467,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:17:00",
+    "action": "BUY",
+    "volume": 0.29,
+    "price": 4499.64,
+    "profit": -596.24,
+    "is_win": false
+  },
+  {
+    "ticket": 29894468,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:17:00",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4499.64,
+    "profit": -36.18,
+    "is_win": false
+  },
+  {
+    "ticket": 29894469,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:17:00",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4499.64,
+    "profit": -48.76,
+    "is_win": false
+  },
+  {
+    "ticket": 29894470,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:17:00",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4499.64,
+    "profit": -94.24,
+    "is_win": false
+  },
+  {
+    "ticket": 29894471,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:17:00",
+    "action": "BUY",
+    "volume": 0.16,
+    "price": 4499.64,
+    "profit": -168.0,
+    "is_win": false
+  },
+  {
+    "ticket": 29894474,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:17:02",
+    "action": "SELL",
+    "volume": 0.19,
+    "price": 4500.57,
+    "profit": 7.22,
+    "is_win": true
+  },
+  {
+    "ticket": 29894480,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:17:14",
+    "action": "BUY",
+    "volume": 0.19,
+    "price": 4498.59,
+    "profit": 47.5,
+    "is_win": true
+  },
+  {
+    "ticket": 29894505,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:18:04",
+    "action": "SELL",
+    "volume": 0.2,
+    "price": 4491.41,
+    "profit": 17.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29894514,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:18:42",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4495.27,
+    "profit": 4.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29894522,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:19:12",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4499.5,
+    "profit": 9.28,
+    "is_win": true
+  },
+  {
+    "ticket": 29894525,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:20:00",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4498.59,
+    "profit": 10.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29894537,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:21:02",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4499.89,
+    "profit": 3.44,
+    "is_win": true
+  },
+  {
+    "ticket": 29894646,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:23:12",
+    "action": "BUY",
+    "volume": 0.16,
+    "price": 4503.43,
+    "profit": 19.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29894655,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:23:28",
+    "action": "BUY",
+    "volume": 0.16,
+    "price": 4502.72,
+    "profit": 23.04,
+    "is_win": true
+  },
+  {
+    "ticket": 29894662,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:24:23",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4499.14,
+    "profit": 5.04,
+    "is_win": true
+  },
+  {
+    "ticket": 29894665,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:24:35",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4498.23,
+    "profit": 8.56,
+    "is_win": true
+  },
+  {
+    "ticket": 29894830,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:30:13",
+    "action": "BUY",
+    "volume": 0.2,
+    "price": 4514.01,
+    "profit": -415.4,
+    "is_win": false
+  },
+  {
+    "ticket": 29894831,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:30:13",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4514.01,
+    "profit": -38.92,
+    "is_win": false
+  },
+  {
+    "ticket": 29894832,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:30:13",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4514.01,
+    "profit": -67.76,
+    "is_win": false
+  },
+  {
+    "ticket": 29894833,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:30:13",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4514.01,
+    "profit": -115.6,
+    "is_win": false
+  },
+  {
+    "ticket": 29894834,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:30:13",
+    "action": "BUY",
+    "volume": 0.16,
+    "price": 4514.01,
+    "profit": -173.92,
+    "is_win": false
+  },
+  {
+    "ticket": 29894843,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:30:25",
+    "action": "SELL",
+    "volume": 0.13,
+    "price": 4514.99,
+    "profit": 21.97,
+    "is_win": true
+  },
+  {
+    "ticket": 29894875,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:31:15",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4521.38,
+    "profit": 0.17,
+    "is_win": true
+  },
+  {
+    "ticket": 29894888,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:32:30",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4523.62,
+    "profit": 0.9,
+    "is_win": true
+  },
+  {
+    "ticket": 29894895,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:32:48",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4521.82,
+    "profit": 2.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29894902,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:32:52",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4521.25,
+    "profit": 0.11,
+    "is_win": true
+  },
+  {
+    "ticket": 29894904,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:32:58",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4519.67,
+    "profit": 2.2800000000000002,
+    "is_win": true
+  },
+  {
+    "ticket": 29894911,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:33:14",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4521.04,
+    "profit": 1.56,
+    "is_win": true
+  },
+  {
+    "ticket": 29894915,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:33:50",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4521.21,
+    "profit": 2.1,
+    "is_win": true
+  },
+  {
+    "ticket": 29894933,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:35:24",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4522.59,
+    "profit": 6.68,
+    "is_win": true
+  },
+  {
+    "ticket": 29894939,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:35:42",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4521.64,
+    "profit": 1.34,
+    "is_win": true
+  },
+  {
+    "ticket": 29894947,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:36:34",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4520.32,
+    "profit": 2.2800000000000002,
+    "is_win": true
+  },
+  {
+    "ticket": 29894949,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:36:52",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4520.9,
+    "profit": 1.26,
+    "is_win": true
+  },
+  {
+    "ticket": 29894953,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:37:12",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4520.61,
+    "profit": 1.6600000000000001,
+    "is_win": true
+  },
+  {
+    "ticket": 29894954,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:37:20",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4518.19,
+    "profit": 1.48,
+    "is_win": true
+  },
+  {
+    "ticket": 29894958,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:37:34",
+    "action": "BUY",
+    "volume": 0.13,
+    "price": 4517.62,
+    "profit": 8.84,
+    "is_win": true
+  },
+  {
+    "ticket": 29894961,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:37:37",
+    "action": "BUY",
+    "volume": 0.13,
+    "price": 4517.0,
+    "profit": 8.06,
+    "is_win": true
+  },
+  {
+    "ticket": 29894964,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:37:56",
+    "action": "SELL",
+    "volume": 0.13,
+    "price": 4517.84,
+    "profit": 8.58,
+    "is_win": true
+  },
+  {
+    "ticket": 29894994,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:39:32",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4523.52,
+    "profit": 3.24,
+    "is_win": true
+  },
+  {
+    "ticket": 29895000,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:39:56",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4523.27,
+    "profit": 2.48,
+    "is_win": true
+  },
+  {
+    "ticket": 29895002,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:40:08",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4520.96,
+    "profit": 1.28,
+    "is_win": true
+  },
+  {
+    "ticket": 29895007,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:40:26",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4520.65,
+    "profit": 1.22,
+    "is_win": true
+  },
+  {
+    "ticket": 29895024,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:41:28",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4519.98,
+    "profit": 1.74,
+    "is_win": true
+  },
+  {
+    "ticket": 29895061,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:42:00",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4518.55,
+    "profit": 0.22,
+    "is_win": true
+  },
+  {
+    "ticket": 29895124,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:42:18",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4518.52,
+    "profit": 0.69,
+    "is_win": true
+  },
+  {
+    "ticket": 29895136,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:42:56",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4518.76,
+    "profit": 0.47,
+    "is_win": true
+  },
+  {
+    "ticket": 29895140,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:43:12",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4518.53,
+    "profit": 0.65,
+    "is_win": true
+  },
+  {
+    "ticket": 29895166,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:44:18",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4518.07,
+    "profit": 0.7,
+    "is_win": true
+  },
+  {
+    "ticket": 29895171,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:44:32",
+    "action": "BUY",
+    "volume": 0.13,
+    "price": 4518.11,
+    "profit": -3.51,
+    "is_win": false
+  },
+  {
+    "ticket": 29895175,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:44:51",
+    "action": "SELL",
+    "volume": 0.13,
+    "price": 4519.94,
+    "profit": 11.44,
+    "is_win": true
+  },
+  {
+    "ticket": 29895185,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:45:40",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4521.12,
+    "profit": 0.78,
+    "is_win": true
+  },
+  {
+    "ticket": 29895188,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:45:56",
+    "action": "BUY",
+    "volume": 0.13,
+    "price": 4519.09,
+    "profit": 14.04,
+    "is_win": true
+  },
+  {
+    "ticket": 29895189,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:45:58",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4517.78,
+    "profit": 3.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29895198,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:46:38",
+    "action": "SELL",
+    "volume": 0.14,
+    "price": 4519.44,
+    "profit": 9.1,
+    "is_win": true
+  },
+  {
+    "ticket": 29895199,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:46:39",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4519.31,
+    "profit": 0.59,
+    "is_win": true
+  },
+  {
+    "ticket": 29895208,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:47:46",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4521.36,
+    "profit": 1.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29895224,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:50:02",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4521.93,
+    "profit": -0.12,
+    "is_win": false
+  },
+  {
+    "ticket": 29895233,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:50:58",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4524.05,
+    "profit": 6.72,
+    "is_win": true
+  },
+  {
+    "ticket": 29895264,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T17:54:10",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4527.23,
+    "profit": 13.12,
+    "is_win": true
+  },
+  {
+    "ticket": 29895460,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:05:44",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4529.31,
+    "profit": 3.92,
+    "is_win": true
+  },
+  {
+    "ticket": 29895470,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:06:30",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4528.61,
+    "profit": 5.04,
+    "is_win": true
+  },
+  {
+    "ticket": 29895500,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:07:22",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4527.7,
+    "profit": 6.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29895534,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:07:50",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4525.03,
+    "profit": 2.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29895589,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:08:31",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4524.49,
+    "profit": 2.48,
+    "is_win": true
+  },
+  {
+    "ticket": 29895622,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:12:20",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4523.78,
+    "profit": 3.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29895669,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:15:37",
+    "action": "BUY",
+    "volume": 0.14,
+    "price": 4539.14,
+    "profit": -287.98,
+    "is_win": false
+  },
+  {
+    "ticket": 29895670,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:15:37",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4539.14,
+    "profit": -18.71,
+    "is_win": false
+  },
+  {
+    "ticket": 29895671,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:15:37",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4539.14,
+    "profit": -34.56,
+    "is_win": false
+  },
+  {
+    "ticket": 29895672,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:15:37",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4539.14,
+    "profit": -57.64,
+    "is_win": false
+  },
+  {
+    "ticket": 29895673,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:15:37",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4539.14,
+    "profit": -65.2,
+    "is_win": false
+  },
+  {
+    "ticket": 29895683,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:15:41",
+    "action": "SELL",
+    "volume": 0.09,
+    "price": 4540.94,
+    "profit": 19.71,
+    "is_win": true
+  },
+  {
+    "ticket": 29895711,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:15:57",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4545.96,
+    "profit": -1.7,
+    "is_win": false
+  },
+  {
+    "ticket": 29895788,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:16:41",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4547.01,
+    "profit": -1.5,
+    "is_win": false
+  },
+  {
+    "ticket": 29895793,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:17:08",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4547.79,
+    "profit": 24.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29895827,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:18:54",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4540.85,
+    "profit": 2.76,
+    "is_win": true
+  },
+  {
+    "ticket": 29895831,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:19:18",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4541.88,
+    "profit": 4.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29895835,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:19:36",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4543.29,
+    "profit": -0.62,
+    "is_win": false
+  },
+  {
+    "ticket": 29895838,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:20:16",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4544.86,
+    "profit": 2.34,
+    "is_win": true
+  },
+  {
+    "ticket": 29895851,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:21:36",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4540.96,
+    "profit": 3.12,
+    "is_win": true
+  },
+  {
+    "ticket": 29895859,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:23:06",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4541.78,
+    "profit": 5.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29895881,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:25:12",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4537.31,
+    "profit": 6.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29896071,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:35:26",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4536.94,
+    "profit": 5.44,
+    "is_win": true
+  },
+  {
+    "ticket": 29896080,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:36:20",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4537.14,
+    "profit": 6.16,
+    "is_win": true
+  },
+  {
+    "ticket": 29896089,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:38:40",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4537.79,
+    "profit": 8.24,
+    "is_win": true
+  },
+  {
+    "ticket": 29896179,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:42:18",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4536.81,
+    "profit": 7.04,
+    "is_win": true
+  },
+  {
+    "ticket": 29896260,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:46:12",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4537.8,
+    "profit": 5.76,
+    "is_win": true
+  },
+  {
+    "ticket": 29896269,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:48:22",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4537.19,
+    "profit": 4.32,
+    "is_win": true
+  },
+  {
+    "ticket": 29896273,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:49:13",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4537.42,
+    "profit": 8.32,
+    "is_win": true
+  },
+  {
+    "ticket": 29896280,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T18:49:57",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4537.07,
+    "profit": 6.16,
+    "is_win": true
+  },
+  {
+    "ticket": 29896783,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:21:21",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4526.15,
+    "profit": -203.8,
+    "is_win": false
+  },
+  {
+    "ticket": 29896784,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:21:21",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4526.15,
+    "profit": -19.96,
+    "is_win": false
+  },
+  {
+    "ticket": 29896785,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:21:21",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4526.15,
+    "profit": -34.64,
+    "is_win": false
+  },
+  {
+    "ticket": 29896786,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:21:21",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4526.15,
+    "profit": -57.52,
+    "is_win": false
+  },
+  {
+    "ticket": 29896787,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:21:21",
+    "action": "SELL",
+    "volume": 0.08,
+    "price": 4526.15,
+    "profit": -82.72,
+    "is_win": false
+  },
+  {
+    "ticket": 29896793,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:21:34",
+    "action": "BUY",
+    "volume": 0.07,
+    "price": 4525.54,
+    "profit": 2.94,
+    "is_win": true
+  },
+  {
+    "ticket": 29896807,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:22:05",
+    "action": "SELL",
+    "volume": 0.07,
+    "price": 4526.78,
+    "profit": 1.33,
+    "is_win": true
+  },
+  {
+    "ticket": 29896820,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:22:59",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4526.3,
+    "profit": 0.72,
+    "is_win": true
+  },
+  {
+    "ticket": 29896835,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:24:09",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4526.07,
+    "profit": 0.68,
+    "is_win": true
+  },
+  {
+    "ticket": 29896840,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:24:49",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4526.07,
+    "profit": 0.58,
+    "is_win": true
+  },
+  {
+    "ticket": 29896843,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:25:03",
+    "action": "BUY",
+    "volume": 0.07,
+    "price": 4525.18,
+    "profit": 4.34,
+    "is_win": true
+  },
+  {
+    "ticket": 29896886,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:28:31",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4524.84,
+    "profit": 2.65,
+    "is_win": true
+  },
+  {
+    "ticket": 29896993,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:29:49",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4525.74,
+    "profit": 1.9,
+    "is_win": true
+  },
+  {
+    "ticket": 29897018,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:31:49",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4527.88,
+    "profit": 2.36,
+    "is_win": true
+  },
+  {
+    "ticket": 29897021,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:33:06",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4526.3,
+    "profit": 1.78,
+    "is_win": true
+  },
+  {
+    "ticket": 29897026,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:33:20",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4526.65,
+    "profit": -1.42,
+    "is_win": false
+  },
+  {
+    "ticket": 29897027,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:33:21",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4526.58,
+    "profit": -11.45,
+    "is_win": false
+  },
+  {
+    "ticket": 29897030,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:34:31",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4524.87,
+    "profit": 2.75,
+    "is_win": true
+  },
+  {
+    "ticket": 29897036,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:35:15",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4526.57,
+    "profit": 2.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29897038,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:35:17",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4526.93,
+    "profit": 2.64,
+    "is_win": true
+  },
+  {
+    "ticket": 29897044,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:36:09",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4526.75,
+    "profit": 0.66,
+    "is_win": true
+  },
+  {
+    "ticket": 29897046,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:36:13",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4527.5,
+    "profit": 2.25,
+    "is_win": true
+  },
+  {
+    "ticket": 29897055,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:37:49",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4527.22,
+    "profit": -1.52,
+    "is_win": false
+  },
+  {
+    "ticket": 29897056,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:37:55",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4525.63,
+    "profit": -10.0,
+    "is_win": false
+  },
+  {
+    "ticket": 29897086,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:41:35",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4529.99,
+    "profit": 3.7,
+    "is_win": true
+  },
+  {
+    "ticket": 29897087,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:41:35",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4530.0,
+    "profit": 2.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29897214,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:43:41",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4531.34,
+    "profit": 1.1400000000000001,
+    "is_win": true
+  },
+  {
+    "ticket": 29897216,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:43:43",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4531.09,
+    "profit": 3.52,
+    "is_win": true
+  },
+  {
+    "ticket": 29897221,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:43:49",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4531.55,
+    "profit": 1.85,
+    "is_win": true
+  },
+  {
+    "ticket": 29897227,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:43:53",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4532.12,
+    "profit": 2.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29897258,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:45:01",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4533.97,
+    "profit": 3.15,
+    "is_win": true
+  },
+  {
+    "ticket": 29897260,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:45:03",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4533.8,
+    "profit": 1.48,
+    "is_win": true
+  },
+  {
+    "ticket": 29897270,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:46:25",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4534.45,
+    "profit": 1.9,
+    "is_win": true
+  },
+  {
+    "ticket": 29897300,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:49:41",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4532.53,
+    "profit": 1.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29897312,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:51:13",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4532.57,
+    "profit": 1.3,
+    "is_win": true
+  },
+  {
+    "ticket": 29897317,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:52:01",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4532.04,
+    "profit": 1.52,
+    "is_win": true
+  },
+  {
+    "ticket": 29897331,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:54:07",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4532.56,
+    "profit": 1.38,
+    "is_win": true
+  },
+  {
+    "ticket": 29897446,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:56:47",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4534.37,
+    "profit": 0.51,
+    "is_win": true
+  },
+  {
+    "ticket": 29897459,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:58:27",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4532.91,
+    "profit": 2.66,
+    "is_win": true
+  },
+  {
+    "ticket": 29897466,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:59:19",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4534.31,
+    "profit": 0.35,
+    "is_win": true
+  },
+  {
+    "ticket": 29897468,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:59:25",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4535.12,
+    "profit": 1.9,
+    "is_win": true
+  },
+  {
+    "ticket": 29897469,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T19:59:25",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4535.13,
+    "profit": 1.3599999999999999,
+    "is_win": true
+  },
+  {
+    "ticket": 29897485,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:00:19",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4534.09,
+    "profit": 0.59,
+    "is_win": true
+  },
+  {
+    "ticket": 29897494,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:00:59",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4534.4,
+    "profit": 0.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29897501,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:01:51",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4534.43,
+    "profit": 0.34,
+    "is_win": true
+  },
+  {
+    "ticket": 29897575,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:06:35",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4533.15,
+    "profit": 1.26,
+    "is_win": true
+  },
+  {
+    "ticket": 29897666,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:08:11",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4534.72,
+    "profit": 0.35,
+    "is_win": true
+  },
+  {
+    "ticket": 29897688,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:09:35",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4535.1,
+    "profit": 0.68,
+    "is_win": true
+  },
+  {
+    "ticket": 29897690,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:09:43",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4535.42,
+    "profit": 1.45,
+    "is_win": true
+  },
+  {
+    "ticket": 29897692,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:09:51",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4535.59,
+    "profit": 0.72,
+    "is_win": true
+  },
+  {
+    "ticket": 29897723,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:13:09",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4534.1,
+    "profit": 0.53,
+    "is_win": true
+  },
+  {
+    "ticket": 29897732,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:13:45",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4537.34,
+    "profit": 0.43,
+    "is_win": true
+  },
+  {
+    "ticket": 29897735,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:13:49",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4535.92,
+    "profit": 3.96,
+    "is_win": true
+  },
+  {
+    "ticket": 29897736,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:13:51",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4535.78,
+    "profit": 2.98,
+    "is_win": true
+  },
+  {
+    "ticket": 29897747,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:14:29",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4535.24,
+    "profit": 2.32,
+    "is_win": true
+  },
+  {
+    "ticket": 29897751,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:14:31",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4534.79,
+    "profit": 0.82,
+    "is_win": true
+  },
+  {
+    "ticket": 29897873,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:16:55",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4534.06,
+    "profit": 0.49,
+    "is_win": true
+  },
+  {
+    "ticket": 29897882,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:17:41",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4534.38,
+    "profit": 0.5,
+    "is_win": true
+  },
+  {
+    "ticket": 29897891,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:18:21",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4533.37,
+    "profit": 2.15,
+    "is_win": true
+  },
+  {
+    "ticket": 29897920,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:22:23",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4536.0,
+    "profit": 0.82,
+    "is_win": true
+  },
+  {
+    "ticket": 29897923,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:22:39",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4535.97,
+    "profit": 1.12,
+    "is_win": true
+  },
+  {
+    "ticket": 29897936,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:24:17",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4533.76,
+    "profit": 0.35,
+    "is_win": true
+  },
+  {
+    "ticket": 29897938,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:24:33",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4533.4,
+    "profit": 0.72,
+    "is_win": true
+  },
+  {
+    "ticket": 29897944,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:25:31",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4533.46,
+    "profit": 0.53,
+    "is_win": true
+  },
+  {
+    "ticket": 29897950,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:26:25",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4533.36,
+    "profit": 0.49,
+    "is_win": true
+  },
+  {
+    "ticket": 29897951,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:26:27",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4533.27,
+    "profit": 1.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29897968,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:27:43",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4535.05,
+    "profit": 1.6400000000000001,
+    "is_win": true
+  },
+  {
+    "ticket": 29897971,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:27:56",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4536.1,
+    "profit": 0.56,
+    "is_win": true
+  },
+  {
+    "ticket": 29897972,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:27:59",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4536.08,
+    "profit": 0.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29897980,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:28:11",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4534.12,
+    "profit": 2.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29897983,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:28:13",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4533.92,
+    "profit": 0.51,
+    "is_win": true
+  },
+  {
+    "ticket": 29898081,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:29:03",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4532.42,
+    "profit": 3.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29898085,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:29:07",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4531.46,
+    "profit": 4.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29898088,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:29:15",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4532.43,
+    "profit": 0.78,
+    "is_win": true
+  },
+  {
+    "ticket": 29898102,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:29:43",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4531.81,
+    "profit": 0.62,
+    "is_win": true
+  },
+  {
+    "ticket": 29898107,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:30:01",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4533.5,
+    "profit": 5.05,
+    "is_win": true
+  },
+  {
+    "ticket": 29898118,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:30:15",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4533.71,
+    "profit": 1.62,
+    "is_win": true
+  },
+  {
+    "ticket": 29898122,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:30:21",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4534.84,
+    "profit": 3.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29898136,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:30:51",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4534.35,
+    "profit": 1.26,
+    "is_win": true
+  },
+  {
+    "ticket": 29898143,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:31:27",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4533.17,
+    "profit": 2.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29898144,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:31:41",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4532.68,
+    "profit": 2.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29898149,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:32:47",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4531.64,
+    "profit": 0.68,
+    "is_win": true
+  },
+  {
+    "ticket": 29898160,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:34:25",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4530.89,
+    "profit": 2.16,
+    "is_win": true
+  },
+  {
+    "ticket": 29898161,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:34:25",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4530.89,
+    "profit": 1.47,
+    "is_win": true
+  },
+  {
+    "ticket": 29898171,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:35:43",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4532.34,
+    "profit": 4.3,
+    "is_win": true
+  },
+  {
+    "ticket": 29898175,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:35:55",
+    "action": "SELL",
+    "volume": 0.04,
+    "price": 4532.62,
+    "profit": 1.6800000000000002,
+    "is_win": true
+  },
+  {
+    "ticket": 29898188,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:37:01",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4535.7,
+    "profit": 0.78,
+    "is_win": true
+  },
+  {
+    "ticket": 29898190,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:37:17",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4535.88,
+    "profit": 0.15,
+    "is_win": true
+  },
+  {
+    "ticket": 29898197,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:38:05",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4534.63,
+    "profit": 1.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29898200,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:38:43",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4536.23,
+    "profit": 3.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29898208,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:40:03",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4535.15,
+    "profit": 1.9,
+    "is_win": true
+  },
+  {
+    "ticket": 29898232,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:41:33",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4534.3,
+    "profit": 3.85,
+    "is_win": true
+  },
+  {
+    "ticket": 29898335,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:43:15",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4533.84,
+    "profit": 1.65,
+    "is_win": true
+  },
+  {
+    "ticket": 29898375,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:46:19",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4535.09,
+    "profit": 2.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29898376,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:46:19",
+    "action": "SELL",
+    "volume": 0.12,
+    "price": 4535.07,
+    "profit": 6.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29898377,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T20:46:20",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4535.06,
+    "profit": 2.55,
+    "is_win": true
+  },
+  {
+    "ticket": 29898554,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:00:03",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4529.41,
+    "profit": -29.2,
+    "is_win": false
+  },
+  {
+    "ticket": 29898555,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:00:03",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4529.41,
+    "profit": -4.6899999999999995,
+    "is_win": false
+  },
+  {
+    "ticket": 29898556,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:00:03",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4529.41,
+    "profit": -6.04,
+    "is_win": false
+  },
+  {
+    "ticket": 29898567,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:00:19",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4529.51,
+    "profit": 4.45,
+    "is_win": true
+  },
+  {
+    "ticket": 29898571,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:00:35",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4531.04,
+    "profit": 0.94,
+    "is_win": true
+  },
+  {
+    "ticket": 29898572,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:00:36",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4531.07,
+    "profit": 1.9,
+    "is_win": true
+  },
+  {
+    "ticket": 29898577,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:00:39",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4530.51,
+    "profit": 0.53,
+    "is_win": true
+  },
+  {
+    "ticket": 29898583,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:01:19",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4530.87,
+    "profit": 0.72,
+    "is_win": true
+  },
+  {
+    "ticket": 29898585,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:01:21",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4532.86,
+    "profit": 8.7,
+    "is_win": true
+  },
+  {
+    "ticket": 29898586,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:01:21",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4532.53,
+    "profit": 1.46,
+    "is_win": true
+  },
+  {
+    "ticket": 29898599,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:02:27",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4530.72,
+    "profit": 0.23,
+    "is_win": true
+  },
+  {
+    "ticket": 29898640,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:06:11",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4530.73,
+    "profit": 0.31,
+    "is_win": true
+  },
+  {
+    "ticket": 29898682,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:07:11",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4532.73,
+    "profit": 0.31,
+    "is_win": true
+  },
+  {
+    "ticket": 29898684,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:07:11",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4532.67,
+    "profit": 0.9,
+    "is_win": true
+  },
+  {
+    "ticket": 29898688,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:07:13",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4532.85,
+    "profit": 1.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29898747,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:07:37",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4533.4,
+    "profit": 0.47,
+    "is_win": true
+  },
+  {
+    "ticket": 29898750,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:07:39",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4533.69,
+    "profit": 2.1,
+    "is_win": true
+  },
+  {
+    "ticket": 29898756,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:08:17",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4532.65,
+    "profit": 0.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29898852,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:15:51",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4534.1,
+    "profit": 0.31,
+    "is_win": true
+  },
+  {
+    "ticket": 29898917,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:16:13",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4535.52,
+    "profit": 1.37,
+    "is_win": true
+  },
+  {
+    "ticket": 29898929,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:16:57",
+    "action": "SELL",
+    "volume": 0.12,
+    "price": 4535.52,
+    "profit": 2.88,
+    "is_win": true
+  },
+  {
+    "ticket": 29898930,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:16:58",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4535.12,
+    "profit": -0.8,
+    "is_win": false
+  },
+  {
+    "ticket": 29898963,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:18:59",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4536.7,
+    "profit": 2.5,
+    "is_win": true
+  },
+  {
+    "ticket": 29898969,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:20:43",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4535.18,
+    "profit": 3.12,
+    "is_win": true
+  },
+  {
+    "ticket": 29898974,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:20:59",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4534.66,
+    "profit": 1.75,
+    "is_win": true
+  },
+  {
+    "ticket": 29899001,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:24:06",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4535.18,
+    "profit": 3.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29899015,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:25:42",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4533.02,
+    "profit": 2.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29899020,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:25:52",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4532.34,
+    "profit": 1.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29899186,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:31:21",
+    "action": "BUY",
+    "volume": 0.05,
+    "price": 4537.5,
+    "profit": -26.9,
+    "is_win": false
+  },
+  {
+    "ticket": 29899200,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:32:14",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4537.44,
+    "profit": 0.3,
+    "is_win": true
+  },
+  {
+    "ticket": 29899212,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:34:58",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4539.23,
+    "profit": 3.85,
+    "is_win": true
+  },
+  {
+    "ticket": 29899221,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:35:02",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4540.45,
+    "profit": -41.92,
+    "is_win": false
+  },
+  {
+    "ticket": 29899222,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:35:02",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4540.45,
+    "profit": -9.24,
+    "is_win": false
+  },
+  {
+    "ticket": 29899223,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:35:02",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4540.45,
+    "profit": -14.78,
+    "is_win": false
+  },
+  {
+    "ticket": 29899224,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:35:02",
+    "action": "BUY",
+    "volume": 0.04,
+    "price": 4540.45,
+    "profit": -17.96,
+    "is_win": false
+  },
+  {
+    "ticket": 29899225,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:35:02",
+    "action": "BUY",
+    "volume": 0.08,
+    "price": 4540.45,
+    "profit": -3.84,
+    "is_win": false
+  },
+  {
+    "ticket": 29899227,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:35:02",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4540.63,
+    "profit": 3.55,
+    "is_win": true
+  },
+  {
+    "ticket": 29899269,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:39:21",
+    "action": "SELL",
+    "volume": 0.05,
+    "price": 4542.77,
+    "profit": -0.35,
+    "is_win": false
+  },
+  {
+    "ticket": 29899294,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:40:34",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4541.43,
+    "profit": 6.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29899454,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:45:22",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4538.17,
+    "profit": 15.2,
+    "is_win": true
+  },
+  {
+    "ticket": 29899476,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:48:51",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4539.91,
+    "profit": 1.56,
+    "is_win": true
+  },
+  {
+    "ticket": 29899484,
+    "symbol": "AUDJPY+",
+    "time": "2026-05-20T21:50:28",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 113.695,
+    "profit": 0.44,
+    "is_win": true
+  },
+  {
+    "ticket": 29899488,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:50:49",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4540.04,
+    "profit": 1.32,
+    "is_win": true
+  },
+  {
+    "ticket": 29899494,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:51:43",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4539.72,
+    "profit": 1.78,
+    "is_win": true
+  },
+  {
+    "ticket": 29899511,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:54:07",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4543.08,
+    "profit": -53.7,
+    "is_win": false
+  },
+  {
+    "ticket": 29899512,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:54:07",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4543.08,
+    "profit": -4.33,
+    "is_win": false
+  },
+  {
+    "ticket": 29899513,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:54:07",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4543.08,
+    "profit": -4.04,
+    "is_win": false
+  },
+  {
+    "ticket": 29899630,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:56:01",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4544.85,
+    "profit": 5.5,
+    "is_win": true
+  },
+  {
+    "ticket": 29899639,
+    "symbol": "AUDCAD+",
+    "time": "2026-05-20T21:57:15",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 0.98408,
+    "profit": 6.55,
+    "is_win": true
+  },
+  {
+    "ticket": 29899651,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:59:07",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4542.6,
+    "profit": 10.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29899653,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T21:59:31",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4542.15,
+    "profit": 3.3,
+    "is_win": true
+  },
+  {
+    "ticket": 29899661,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-20T22:01:24",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4544.45,
+    "profit": 4.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29900569,
+    "symbol": "CADJPY+",
+    "time": "2026-05-20T22:55:23",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 115.602,
+    "profit": 30.84,
+    "is_win": true
+  },
+  {
+    "ticket": 29900626,
+    "symbol": "AUDCAD+",
+    "time": "2026-05-20T23:04:33",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 0.98355,
+    "profit": 36.38,
+    "is_win": true
+  },
+  {
+    "ticket": 29900816,
+    "symbol": "AUDJPY+",
+    "time": "2026-05-20T23:12:02",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 113.679,
+    "profit": -30.84,
+    "is_win": false
+  },
+  {
+    "ticket": 29900817,
+    "symbol": "AUDJPY+",
+    "time": "2026-05-20T23:12:02",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 113.679,
+    "profit": -1.76,
+    "is_win": false
+  },
+  {
+    "ticket": 29901519,
+    "symbol": "AUDUSD+",
+    "time": "2026-05-21T00:01:46",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 0.71529,
+    "profit": 54.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29911276,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:22:52",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4520.02,
+    "profit": 6.5,
+    "is_win": true
+  },
+  {
+    "ticket": 29911301,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:24:34",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4518.45,
+    "profit": 0.59,
+    "is_win": true
+  },
+  {
+    "ticket": 29911307,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:25:02",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4517.92,
+    "profit": 1.04,
+    "is_win": true
+  },
+  {
+    "ticket": 29911309,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:25:06",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4516.63,
+    "profit": 13.9,
+    "is_win": true
+  },
+  {
+    "ticket": 29911318,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:25:48",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4516.88,
+    "profit": 0.75,
+    "is_win": true
+  },
+  {
+    "ticket": 29911320,
+    "symbol": "EURUSD+",
+    "time": "2026-05-21T10:25:52",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 1.15951,
+    "profit": 30.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29911344,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:27:42",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4516.89,
+    "profit": 0.44,
+    "is_win": true
+  },
+  {
+    "ticket": 29911360,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:28:28",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4515.51,
+    "profit": 9.3,
+    "is_win": true
+  },
+  {
+    "ticket": 29911388,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:28:50",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4515.15,
+    "profit": 2.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29911469,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:29:14",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4512.83,
+    "profit": 8.7,
+    "is_win": true
+  },
+  {
+    "ticket": 29911494,
+    "symbol": "EURGBP+",
+    "time": "2026-05-21T10:30:00",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 0.86485,
+    "profit": -72.46,
+    "is_win": false
+  },
+  {
+    "ticket": 29911495,
+    "symbol": "EURUSD+",
+    "time": "2026-05-21T10:30:00",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 1.16037,
+    "profit": -89.0,
+    "is_win": false
+  },
+  {
+    "ticket": 29911518,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:30:52",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4513.1,
+    "profit": 0.85,
+    "is_win": true
+  },
+  {
+    "ticket": 29911524,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:31:02",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4512.75,
+    "profit": 0.76,
+    "is_win": true
+  },
+  {
+    "ticket": 29911556,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:35:56",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4514.81,
+    "profit": 1.94,
+    "is_win": true
+  },
+  {
+    "ticket": 29911566,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:37:52",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4515.47,
+    "profit": 1.1400000000000001,
+    "is_win": true
+  },
+  {
+    "ticket": 29911575,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:39:44",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4515.48,
+    "profit": 0.84,
+    "is_win": true
+  },
+  {
+    "ticket": 29911696,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:42:14",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4515.27,
+    "profit": 0.92,
+    "is_win": true
+  },
+  {
+    "ticket": 29911745,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:45:20",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4514.89,
+    "profit": 1.58,
+    "is_win": true
+  },
+  {
+    "ticket": 29911760,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:47:30",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4517.8,
+    "profit": -50.7,
+    "is_win": false
+  },
+  {
+    "ticket": 29911761,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:47:30",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4517.8,
+    "profit": -3.34,
+    "is_win": false
+  },
+  {
+    "ticket": 29911762,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:47:30",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4517.8,
+    "profit": -4.74,
+    "is_win": false
+  },
+  {
+    "ticket": 29911784,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:50:10",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4516.08,
+    "profit": 5.5,
+    "is_win": true
+  },
+  {
+    "ticket": 29911790,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:50:44",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4518.94,
+    "profit": 11.3,
+    "is_win": true
+  },
+  {
+    "ticket": 29911803,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:51:26",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4521.1,
+    "profit": 5.3,
+    "is_win": true
+  },
+  {
+    "ticket": 29911809,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:52:06",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4522.83,
+    "profit": 3.5,
+    "is_win": true
+  },
+  {
+    "ticket": 29911830,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:53:44",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4521.73,
+    "profit": 1.04,
+    "is_win": true
+  },
+  {
+    "ticket": 29911833,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:53:56",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4521.46,
+    "profit": 4.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29911837,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:54:08",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4520.73,
+    "profit": 5.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29911886,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:55:12",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4521.76,
+    "profit": 0.73,
+    "is_win": true
+  },
+  {
+    "ticket": 29911964,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:56:56",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4521.76,
+    "profit": 0.55,
+    "is_win": true
+  },
+  {
+    "ticket": 29911968,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:57:32",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4521.9,
+    "profit": 0.59,
+    "is_win": true
+  },
+  {
+    "ticket": 29911970,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T10:58:02",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4522.71,
+    "profit": 4.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29911992,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:01:26",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4520.27,
+    "profit": 0.44,
+    "is_win": true
+  },
+  {
+    "ticket": 29911994,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:01:36",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4518.92,
+    "profit": 8.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29912014,
+    "symbol": "AUDCAD+",
+    "time": "2026-05-21T11:03:34",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 0.98058,
+    "profit": -34.12,
+    "is_win": false
+  },
+  {
+    "ticket": 29912017,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:03:48",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4521.34,
+    "profit": 0.62,
+    "is_win": true
+  },
+  {
+    "ticket": 29912027,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:04:20",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4521.1,
+    "profit": 1.52,
+    "is_win": true
+  },
+  {
+    "ticket": 29912029,
+    "symbol": "GBPCHF+",
+    "time": "2026-05-21T11:04:35",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 1.05789,
+    "profit": -59.69,
+    "is_win": false
+  },
+  {
+    "ticket": 29912034,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:04:57",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4523.81,
+    "profit": -49.9,
+    "is_win": false
+  },
+  {
+    "ticket": 29912035,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:04:57",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4523.81,
+    "profit": -2.94,
+    "is_win": false
+  },
+  {
+    "ticket": 29912036,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:04:57",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4523.81,
+    "profit": -1.52,
+    "is_win": false
+  },
+  {
+    "ticket": 29912056,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:06:00",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4523.19,
+    "profit": 0.39,
+    "is_win": true
+  },
+  {
+    "ticket": 29912060,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:06:24",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4523.31,
+    "profit": 0.51,
+    "is_win": true
+  },
+  {
+    "ticket": 29912063,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:06:28",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4524.39,
+    "profit": 4.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29912068,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:06:52",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4524.87,
+    "profit": 3.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29912071,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:07:02",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4526.52,
+    "profit": 6.3,
+    "is_win": true
+  },
+  {
+    "ticket": 29912101,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:08:16",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4525.37,
+    "profit": 3.1,
+    "is_win": true
+  },
+  {
+    "ticket": 29912236,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:10:45",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4531.06,
+    "profit": -58.0,
+    "is_win": false
+  },
+  {
+    "ticket": 29912237,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:10:45",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4531.06,
+    "profit": -4.6,
+    "is_win": false
+  },
+  {
+    "ticket": 29912238,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:10:45",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4531.06,
+    "profit": -5.5,
+    "is_win": false
+  },
+  {
+    "ticket": 29912249,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:11:08",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4531.21,
+    "profit": 1.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29912259,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:11:30",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4532.57,
+    "profit": 5.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29912276,
+    "symbol": "EURUSD+",
+    "time": "2026-05-21T11:11:48",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 1.16204,
+    "profit": 33.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29912286,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:12:00",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4535.15,
+    "profit": 7.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29912297,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:12:26",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4531.42,
+    "profit": 6.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29912307,
+    "symbol": "EURUSD+",
+    "time": "2026-05-21T11:13:26",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 1.16234,
+    "profit": 24.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29912314,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:14:12",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4532.72,
+    "profit": 4.1,
+    "is_win": true
+  },
+  {
+    "ticket": 29912322,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:14:26",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4535.0,
+    "profit": 5.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29912349,
+    "symbol": "AUDUSD+",
+    "time": "2026-05-21T11:15:11",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 0.71346,
+    "profit": 23.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29912352,
+    "symbol": "AUDCAD+",
+    "time": "2026-05-21T11:15:13",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 0.98211,
+    "profit": 15.98,
+    "is_win": true
+  },
+  {
+    "ticket": 29912362,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:15:58",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4534.34,
+    "profit": 0.27,
+    "is_win": true
+  },
+  {
+    "ticket": 29912365,
+    "symbol": "AUDUSD+",
+    "time": "2026-05-21T11:15:59",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 0.71376,
+    "profit": 26.0,
+    "is_win": true
+  },
+  {
+    "ticket": 29912369,
+    "symbol": "AUDCAD+",
+    "time": "2026-05-21T11:16:01",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 0.98242,
+    "profit": 18.16,
+    "is_win": true
+  },
+  {
+    "ticket": 29912371,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:16:02",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4535.88,
+    "profit": 9.4,
+    "is_win": true
+  },
+  {
+    "ticket": 29912406,
+    "symbol": "AUDCAD+",
+    "time": "2026-05-21T11:16:29",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 0.98201,
+    "profit": -35.6,
+    "is_win": false
+  },
+  {
+    "ticket": 29912433,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:16:44",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4535.88,
+    "profit": 0.61,
+    "is_win": true
+  },
+  {
+    "ticket": 29912485,
+    "symbol": "AUDUSD+",
+    "time": "2026-05-21T11:17:00",
+    "action": "SELL",
+    "volume": 1.0,
+    "price": 0.7133,
+    "profit": -53.0,
+    "is_win": false
+  },
+  {
+    "ticket": 29912507,
+    "symbol": "AUDCAD+",
+    "time": "2026-05-21T11:17:51",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 0.98176,
+    "profit": 15.26,
+    "is_win": true
+  },
+  {
+    "ticket": 29912531,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:18:51",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4531.02,
+    "profit": -51.2,
+    "is_win": false
+  },
+  {
+    "ticket": 29912532,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:18:51",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4531.02,
+    "profit": -3.85,
+    "is_win": false
+  },
+  {
+    "ticket": 29912533,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:18:51",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4531.02,
+    "profit": -3.54,
+    "is_win": false
+  },
+  {
+    "ticket": 29912543,
+    "symbol": "AUDCAD+",
+    "time": "2026-05-21T11:20:01",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 0.98126,
+    "profit": 15.25,
+    "is_win": true
+  },
+  {
+    "ticket": 29912545,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:20:06",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4531.14,
+    "profit": 0.26,
+    "is_win": true
+  },
+  {
+    "ticket": 29912557,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:21:24",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4531.28,
+    "profit": 0.29,
+    "is_win": true
+  },
+  {
+    "ticket": 29912572,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:23:18",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4531.45,
+    "profit": 0.63,
+    "is_win": true
+  },
+  {
+    "ticket": 29912583,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:24:16",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4532.25,
+    "profit": 2.8,
+    "is_win": true
+  },
+  {
+    "ticket": 29912589,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:24:40",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4533.03,
+    "profit": 6.5,
+    "is_win": true
+  },
+  {
+    "ticket": 29912607,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:26:48",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4530.15,
+    "profit": 18.7,
+    "is_win": true
+  },
+  {
+    "ticket": 29912621,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:27:44",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4529.77,
+    "profit": 0.7,
+    "is_win": true
+  },
+  {
+    "ticket": 29912632,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:28:10",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4531.71,
+    "profit": 0.74,
+    "is_win": true
+  },
+  {
+    "ticket": 29912633,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:28:10",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4531.7,
+    "profit": 1.56,
+    "is_win": true
+  },
+  {
+    "ticket": 29912733,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:29:16",
+    "action": "BUY",
+    "volume": 0.02,
+    "price": 4531.49,
+    "profit": 2.08,
+    "is_win": true
+  },
+  {
+    "ticket": 29912735,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:29:19",
+    "action": "BUY",
+    "volume": 0.1,
+    "price": 4534.63,
+    "profit": -51.3,
+    "is_win": false
+  },
+  {
+    "ticket": 29912736,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:29:19",
+    "action": "BUY",
+    "volume": 0.01,
+    "price": 4534.63,
+    "profit": -3.18,
+    "is_win": false
+  },
+  {
+    "ticket": 29912745,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:29:32",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4534.62,
+    "profit": 8.6,
+    "is_win": true
+  },
+  {
+    "ticket": 29912756,
+    "symbol": "USDCAD+",
+    "time": "2026-05-21T11:29:56",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 1.3762400000000001,
+    "profit": 21.07,
+    "is_win": true
+  },
+  {
+    "ticket": 29912783,
+    "symbol": "AUDCAD+",
+    "time": "2026-05-21T11:32:05",
+    "action": "BUY",
+    "volume": 1.0,
+    "price": 0.98183,
+    "profit": 15.98,
+    "is_win": true
+  },
+  {
+    "ticket": 29912799,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:33:26",
+    "action": "SELL",
+    "volume": 0.1,
+    "price": 4531.22,
+    "profit": 6.7,
+    "is_win": true
+  },
+  {
+    "ticket": 29912803,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:34:10",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4530.33,
+    "profit": 0.71,
+    "is_win": true
+  },
+  {
+    "ticket": 29912854,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:37:32",
+    "action": "SELL",
+    "volume": 0.02,
+    "price": 4529.49,
+    "profit": 2.1,
+    "is_win": true
+  },
+  {
+    "ticket": 29912856,
+    "symbol": "XAUUSD+",
+    "time": "2026-05-21T11:37:48",
+    "action": "SELL",
+    "volume": 0.01,
+    "price": 4530.69,
+    "profit": 0.28,
+    "is_win": true
+  }
+]

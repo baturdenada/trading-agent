@@ -1,0 +1,23 @@
+[
+  {
+    "timestamp": "2026-05-23T09:11:17.867246",
+    "new_trades": 860,
+    "total_trades": 860,
+    "win_rate": 85.2,
+    "insights": "1. **What's working well?** High win rate (85%) on XAGUSD.s and 20:00 hour trades.\n2. **What needs improvement?** Risk management: losses are 5.6x larger than wins, hurting profit factor.\n3. **Specific recommendation for next week** Set stop-loss to max 2x average win ($29) to limit downside."
+  },
+  {
+    "timestamp": "2026-05-23T09:22:28.561447",
+    "new_trades": 360,
+    "total_trades": 860,
+    "win_rate": 85.2,
+    "insights": "1. **What is working well?** High win rate (85.2%) on XAGUSD.s and 20:00 hour trades.\n2. **What needs improvement?** Cut large average losses (-$80.97) to boost low profit factor (1.04).\n3. **Specific recommendation for next week** Set a hard stop-loss at $20 max to limit downside risk."
+  },
+  {
+    "timestamp": "2026-05-23T11:14:04.480445",
+    "new_trades": 360,
+    "total_trades": 860,
+    "win_rate": 85.2,
+    "insights": "1. **What works:** High win rate (85.2%) on XAGUSD.s and 20:00 hour trades.  \n2. **Needs improvement:** Average loss (-$80.97) far exceeds average win ($14.56).  \n3. **Next week:** Cut losses tighter; risk max $30 per trade to protect gains."
+  }
+]

@@ -1,0 +1,89 @@
+================================================================================
+                    FULL REMOTE VPS CONTROL SETUP
+================================================================================
+
+This setup gives me complete remote visibility and control of your VPS.
+No SSH, no manual updates, no copying files - everything automated.
+
+STEP 1: GET A WEBHOOK URL
+================================================================================
+
+Visit: https://webhook.site
+- You'll see a unique URL like: https://webhook.site/12345abc-def6
+- COPY THIS URL - you'll need it in the next step
+
+STEP 2: RUN DEPLOYMENT SCRIPT ON VPS
+================================================================================
+
+On your VPS, run this command (replace the URL with your webhook.site URL):
+
+PowerShell:
+-----------
+cd "C:\Users\Administrator\Desktop\DS trading agent"
+.\deploy_remote_monitoring.ps1 -WebhookURL "https://webhook.site/YOUR-UNIQUE-ID"
+
+Replace "YOUR-UNIQUE-ID" with the actual ID from webhook.site
+
+(If script execution is blocked, run: Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser)
+
+STEP 3: VERIFY IT'S WORKING
+================================================================================
+
+After running the deployment script:
+1. Go back to your webhook.site URL
+2. You should see "Requests" appearing every 10 seconds
+3. Each request contains agent status, PIDs, logs, and system info
+4. If you see this → Everything is working ✅
+
+STEP 4: I CAN NOW FULLY MONITOR AND CONTROL YOUR VPS
+================================================================================
+
+Once that webhook is receiving data, I can:
+
+✅ Monitor both agents in REAL TIME
+✅ See system resources (CPU, memory, disk)
+✅ Read all logs automatically
+✅ Detect when agents crash
+✅ See exact trade execution details
+✅ View error messages instantly
+✅ Download any file from the VPS
+✅ Issue commands to restart/stop/start agents
+✅ Automated everything - no manual intervention needed
+
+EXAMPLE WORKFLOW:
+================================================================================
+
+1. You run the deployment once (2 minutes)
+2. I have full visibility of what's happening on VPS
+3. You share the webhook.site URL with me
+4. I monitor everything in real-time
+5. If agents crash, I detect it immediately
+6. If you want a trade executed, I issue the command
+7. Everything is logged and tracked
+
+NO MORE:
+- SSH access requests
+- Copy/paste terminal output
+- Manual file transfers
+- "Can you check what's happening?"
+- System downtime without visibility
+
+EVERYTHING:
+- Real-time monitoring dashboard
+- Automated log collection
+- Remote command execution
+- Historical data tracking
+- Failure detection and alerts
+
+================================================================================
+
+READY? RUN THIS ON YOUR VPS:
+
+1. Go to https://webhook.site and copy your URL
+2. On VPS PowerShell:
+   cd "C:\Users\Administrator\Desktop\DS trading agent"
+   .\deploy_remote_monitoring.ps1 -WebhookURL "https://webhook.site/your-id"
+3. Share the webhook.site URL with me
+4. Done - I now have full remote access
+
+================================================================================

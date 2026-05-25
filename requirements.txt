@@ -1,0 +1,12 @@
+MetaTrader5
+python-telegram-bot
+requests
+python-dotenv
+openai
+numpy
+pandas
+flask
+flask-socketio
+plotly
+psutil
+feedparser
