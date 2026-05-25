@@ -743,6 +743,15 @@ Only BUY/SELL if confidence > 60."""
                     logger.info(f"Trade deferred for {symbol_info['name']} - waiting for better setup")
                     continue
 
+                # Check correlation risk BEFORE opening trade to prevent too many correlated positions
+                positions_dict = [{'symbol': p.symbol} for p in all_positions]
+                corr_exceeded, corr_reason = self.risk_manager.check_correlation_risk(
+                    positions_dict, self.max_correlated
+                )
+                if corr_exceeded:
+                    logger.warning(f"Skipping {symbol_info['name']}: {corr_reason}")
+                    continue
+
                 # Calculate risk/reward ratio for dynamic position sizing
                 risk_reward_ratio = None
                 if decision.get('stop_loss') and decision.get('take_profit'):
