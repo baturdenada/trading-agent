@@ -25,10 +25,11 @@ class GitAutoDeployer:
         self.agents = {
             "intelligence_hub.py": "required",
             "ultimate_trader.py": "required",
-            "strategy_agent.py": "forbidden",
-            "news_agent.py": "forbidden",
-            "teacher_agent.py": "forbidden",
-            "orchestrator_agent.py": "forbidden"
+            "conversational_hub.py": "required",
+            "strategy_agent.py": "required",
+            "news_agent.py": "required",
+            "orchestrator_agent.py": "required",
+            "teacher_agent.py": "optional"
         }
 
     def get_current_commit(self):
