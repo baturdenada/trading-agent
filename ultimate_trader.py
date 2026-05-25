@@ -955,9 +955,12 @@ Only BUY/SELL if confidence > 60."""
 
                 current_price = tick.ask if setup.action == 'BUY' else tick.bid
 
+                # Detect candle direction from price movement
+                candle_dir = "UP" if current_price > setup.entry_price_at_arm else "DOWN"
+
                 # Check for pullback/confirmation
                 confirm_result = self.state_machine.process_confirmation(
-                    symbol_info['name'], current_price, "UP"  # Would get from candle analysis
+                    symbol_info['name'], current_price, candle_dir
                 )
 
                 if confirm_result['ready_to_enter']:
@@ -967,11 +970,16 @@ Only BUY/SELL if confidence > 60."""
 
                     if entry_result['should_enter']:
                         setup = entry_result['setup']
+                        logger.info(f"⚡ EXECUTING TRADE: {symbol_info['name']} {setup.action} | Entry: ${setup.entry_price:.4f}")
                         # Execute the trade
                         self._execute_confirmed_trade(setup, symbol_info, indicators, regime_info, account, all_positions)
                         self.state_machine.close_setup(symbol_info['name'])
+                    else:
+                        logger.debug(f"Entry window not ready for {symbol_info['name']}: {entry_result['reason']}")
+                else:
+                    logger.debug(f"Confirmation not ready for {symbol_info['name']}: {confirm_result['reason']}")
 
-                time.sleep(1)
+                time.sleep(0.1)
 
     def _execute_confirmed_trade(self, setup, symbol_info, indicators, regime_info, account, all_positions):
         """Execute a trade that passed all confirmation phases"""
