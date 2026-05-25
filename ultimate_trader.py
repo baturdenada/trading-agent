@@ -262,7 +262,8 @@ class UltimateTrader:
             return 0.15
         return sum(true_ranges[-period:]) / period
     
-    def calculate_lot_size(self, symbol_info, confidence, account_balance, atr):
+    def calculate_lot_size(self, symbol_info, confidence, account_balance, atr, risk_reward_ratio=None):
+        """Calculate lot size with dynamic adjustment based on R:R ratio"""
         # Use RiskManager for professional position sizing with hard caps
         if self.risk_manager:
             position_size, risk_pct = self.risk_manager.calculate_position_size(
@@ -274,6 +275,13 @@ class UltimateTrader:
             )
             # Convert position size to lot size
             lot_size = position_size / (atr * 1.5 * symbol_info['pip_value'] * 100000)
+
+            # DYNAMIC POSITION SIZING: Adjust based on risk/reward ratio
+            if risk_reward_ratio and risk_reward_ratio > 2.0:
+                lot_size *= 1.2  # 20% bigger for excellent risk/reward (1:2 or better)
+            elif risk_reward_ratio and risk_reward_ratio < 1.0:
+                lot_size *= 0.6  # 40% smaller for poor risk/reward (<1:1)
+
             lot_size = max(0.01, min(lot_size, 0.5))
             return round(lot_size, 2), risk_pct
         else:
@@ -289,6 +297,13 @@ class UltimateTrader:
             risk_pct = min(base_risk * confidence_multiplier * loss_penalty * vol_adjustment, 0.03)
             account_risk = account_balance * risk_pct
             lot_size = account_risk / (atr * 1.5 * symbol_info['pip_value'] * 100000)
+
+            # Apply R:R adjustment
+            if risk_reward_ratio and risk_reward_ratio > 2.0:
+                lot_size *= 1.2
+            elif risk_reward_ratio and risk_reward_ratio < 1.0:
+                lot_size *= 0.6
+
             lot_size = max(0.01, min(lot_size, 0.5))
             return round(lot_size, 2), risk_pct
     
@@ -346,6 +361,23 @@ Only BUY/SELL if confidence > 60."""
         pnl_pips = (current_price - entry) / symbol_info['pip_value'] if position.type == 0 else (entry - current_price) / symbol_info['pip_value']
         atr = self.calculate_atr(symbol_info['name'])
         risk_in_pips = abs(entry - position.sl) / symbol_info['pip_value'] if position.sl else 50
+
+        # AUTO-CLOSE LOSING TRADES BASED ON SETUP QUALITY DEGRADATION
+        if pnl < 0:
+            indicators = self.calculate_indicators(symbol_info['name'])
+            if indicators:
+                # If trend has completely reversed from entry, consider it a bad setup
+                entry_bias = "BUY" if position.type == 0 else "SELL"
+                current_trend = indicators['trend']
+
+                # Reverse direction indicators mean setup is degraded
+                if (entry_bias == "BUY" and current_trend in ["STRONG_DOWN", "WEAK_DOWN"]) or \
+                   (entry_bias == "SELL" and current_trend in ["STRONG_UP", "WEAK_UP"]):
+                    # Check if loss is small enough to exit - don't wait for SL
+                    if pnl_pct > -1.5:  # Exit losing trades with <1.5% loss if setup degraded
+                        self.close_position(position.ticket, "Setup degradation - trend reversed")
+                        logger.info(f"Closed losing position {symbol_info['name']} due to setup degradation")
+                        return
 
         # 1. PROFIT-TAKING ALERTS - Notify user of opportunities
         if position.tp:
@@ -581,6 +613,70 @@ Only BUY/SELL if confidence > 60."""
     def cmd_help(self):
         self.send("🔥 ULTIMATE TRADER\n\nFEATURES:\n• Dynamic SL/TP modification\n• Trailing stop loss\n• Early exit on reversal\n• Portfolio risk management\n• Multi-timeframe analysis\n• Self-learning from trade history\n• Market regime adaptation\n• Position optimization\n\nCOMMANDS:\nstatus, positions, risk, help\n\nOr just type anything else and Claude will process it!")
 
+    def should_defer_trade(self, confidence, symbol, existing_positions):
+        """Intelligent hold logic - defer trade if better to wait"""
+        if len(existing_positions) < 3:
+            return False  # Open capacity, don't defer
+
+        # If new signal is low-moderate confidence but we have high-quality positions, defer
+        if confidence < 70:
+            # Check quality of existing positions
+            existing_scores = [p.get('score', 50) for p in existing_positions]
+            avg_position_quality = sum(existing_scores) / len(existing_scores) if existing_scores else 50
+
+            if avg_position_quality > 65:
+                logger.info(f"Deferring {symbol} trade (confidence {confidence}) - existing positions are higher quality")
+                return True
+
+        return False
+
+    def attempt_grid_trade(self, position, symbol_info, confidence):
+        """Grid trade on losers - average down if setup is still valid"""
+        if position.profit > -0.5:  # Only grid if loss > 0.5%
+            return False
+
+        indicators = self.calculate_indicators(symbol_info['name'])
+        if not indicators:
+            return False
+
+        # Check if original setup is still valid (haven't completely reversed)
+        entry_bias = "BUY" if position.type == 0 else "SELL"
+        current_rsi = indicators['rsi']
+
+        # Grid if RSI hasn't completely reversed AND confidence is high
+        is_oversold = current_rsi < 30
+        is_overbought = current_rsi > 70
+
+        if (entry_bias == "BUY" and is_oversold and confidence > 75) or \
+           (entry_bias == "SELL" and is_overbought and confidence > 75):
+            # Calculate grid lot - smaller than original
+            tick = mt5.symbol_info_tick(symbol_info['name'])
+            if not tick:
+                return False
+
+            grid_lot = position.volume * 0.5  # Grid is 50% of original position
+            grid_price = tick.ask if entry_bias == "BUY" else tick.bid
+
+            order_type = mt5.ORDER_TYPE_BUY if entry_bias == "BUY" else mt5.ORDER_TYPE_SELL
+            request = {
+                "action": mt5.TRADE_ACTION_DEAL,
+                "symbol": symbol_info['name'],
+                "volume": grid_lot,
+                "type": order_type,
+                "price": grid_price,
+                "deviation": 20,
+                "comment": "GRID_TRADE",
+                "type_filling": mt5.ORDER_FILLING_IOC,
+            }
+
+            result = mt5.order_send(request)
+            if result and result.retcode == mt5.TRADE_RETCODE_DONE:
+                self.send(f"📊 GRID TRADE OPENED: Averaging down on {symbol_info['name']} | Grid: {grid_lot}L @ ${grid_price:.4f}")
+                logger.info(f"Grid trade executed for {symbol_info['name']}: {grid_lot}L")
+                return True
+
+        return False
+
     def _extract_setup_type(self, reasoning_text):
         """Extract setup type from AI reasoning for learning"""
         text = reasoning_text.lower()
@@ -612,6 +708,11 @@ Only BUY/SELL if confidence > 60."""
             if positions:
                 for pos in positions:
                     self.manage_position(pos, symbol_info)
+                    # Try grid trading if position is losing and setup is still valid
+                    indicators = self.calculate_indicators(symbol_info['name'])
+                    if indicators and pos.profit < 0:
+                        decision = self.get_ai_decision(symbol_info, indicators, account, True)
+                        self.attempt_grid_trade(pos, symbol_info, decision.get('confidence', 0))
                 continue
 
             indicators = self.calculate_indicators(symbol_info['name'])
@@ -637,7 +738,22 @@ Only BUY/SELL if confidence > 60."""
 
             min_confidence = 50
             if decision and decision.get('action') in ['BUY', 'SELL'] and adjusted_confidence >= min_confidence:
-                lot, risk_pct = self.calculate_lot_size(symbol_info, adjusted_confidence, account.balance, indicators['atr'])
+                # Check if we should defer this trade - wait for better opportunity
+                if self.should_defer_trade(adjusted_confidence, symbol_info['name'], all_positions):
+                    logger.info(f"Trade deferred for {symbol_info['name']} - waiting for better setup")
+                    continue
+
+                # Calculate risk/reward ratio for dynamic position sizing
+                risk_reward_ratio = None
+                if decision.get('stop_loss') and decision.get('take_profit'):
+                    try:
+                        risk = abs(decision['entry_price'] - decision['stop_loss'])
+                        reward = abs(decision['take_profit'] - decision['entry_price'])
+                        risk_reward_ratio = reward / risk if risk > 0 else 1.0
+                    except:
+                        risk_reward_ratio = None
+
+                lot, risk_pct = self.calculate_lot_size(symbol_info, adjusted_confidence, account.balance, indicators['atr'], risk_reward_ratio=risk_reward_ratio)
 
                 # Apply position size adjustment based on regime
                 regime_size_adjustment = regime_info.get('regime', 'UNKNOWN')

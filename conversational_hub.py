@@ -93,6 +93,10 @@ CLOSE intent examples:
 - "close euro" → CLOSE intent with symbol=EURUSD
 - "close gold position" → CLOSE intent with symbol=XAUUSD
 - "shut down the yen trade" → CLOSE intent with symbol=USDJPY
+- "close all" → CLOSE intent with symbol=all
+- "close losing" → CLOSE intent with symbol=losing
+- "close winning" → CLOSE intent with symbol=winning
+- "close profit" → CLOSE intent with symbol=winning
 
 HISTORY intent examples:
 - "history" → HISTORY intent
@@ -355,9 +359,134 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             logger.error(f"Trade execution error: {e}")
             return f"Trade execution error: {str(e)[:100]}"
 
+    def handle_close_all_positions(self):
+        """Close all open positions"""
+        import MetaTrader5 as mt5
+        try:
+            positions = mt5.positions_get()
+            if not positions:
+                return "❌ No open positions to close"
+
+            closed_count = 0
+            for pos in positions:
+                tick = mt5.symbol_info_tick(pos.symbol)
+                if not tick:
+                    continue
+
+                order_type = mt5.ORDER_TYPE_SELL if pos.type == 0 else mt5.ORDER_TYPE_BUY
+                request = {
+                    "action": mt5.TRADE_ACTION_DEAL,
+                    "symbol": pos.symbol,
+                    "volume": pos.volume,
+                    "type": order_type,
+                    "position": pos.ticket,
+                    "deviation": 20,
+                    "comment": "CLOSE_ALL",
+                    "type_filling": mt5.ORDER_FILLING_IOC,
+                }
+
+                result = mt5.order_send(request)
+                if result and result.retcode == mt5.TRADE_RETCODE_DONE:
+                    closed_count += 1
+
+            return f"✅ Closed {closed_count} positions"
+        except Exception as e:
+            logger.error(f"Close all error: {e}")
+            return f"❌ Error closing positions: {str(e)[:100]}"
+
+    def handle_close_losing_positions(self):
+        """Close all losing positions"""
+        import MetaTrader5 as mt5
+        try:
+            positions = mt5.positions_get()
+            if not positions:
+                return "❌ No open positions"
+
+            losing_positions = [p for p in positions if p.profit < 0]
+            if not losing_positions:
+                return "✅ No losing positions to close"
+
+            closed_count = 0
+            total_loss = 0
+            for pos in losing_positions:
+                tick = mt5.symbol_info_tick(pos.symbol)
+                if not tick:
+                    continue
+
+                order_type = mt5.ORDER_TYPE_SELL if pos.type == 0 else mt5.ORDER_TYPE_BUY
+                request = {
+                    "action": mt5.TRADE_ACTION_DEAL,
+                    "symbol": pos.symbol,
+                    "volume": pos.volume,
+                    "type": order_type,
+                    "position": pos.ticket,
+                    "deviation": 20,
+                    "comment": "CLOSE_LOSING",
+                    "type_filling": mt5.ORDER_FILLING_IOC,
+                }
+
+                result = mt5.order_send(request)
+                if result and result.retcode == mt5.TRADE_RETCODE_DONE:
+                    closed_count += 1
+                    total_loss += pos.profit
+
+            return f"✅ Closed {closed_count} losing positions | Total loss: ${total_loss:+.2f}"
+        except Exception as e:
+            logger.error(f"Close losing error: {e}")
+            return f"❌ Error closing losing positions: {str(e)[:100]}"
+
+    def handle_close_winning_positions(self):
+        """Close all winning positions"""
+        import MetaTrader5 as mt5
+        try:
+            positions = mt5.positions_get()
+            if not positions:
+                return "❌ No open positions"
+
+            winning_positions = [p for p in positions if p.profit > 0]
+            if not winning_positions:
+                return "❌ No winning positions to close"
+
+            closed_count = 0
+            total_profit = 0
+            for pos in winning_positions:
+                tick = mt5.symbol_info_tick(pos.symbol)
+                if not tick:
+                    continue
+
+                order_type = mt5.ORDER_TYPE_SELL if pos.type == 0 else mt5.ORDER_TYPE_BUY
+                request = {
+                    "action": mt5.TRADE_ACTION_DEAL,
+                    "symbol": pos.symbol,
+                    "volume": pos.volume,
+                    "type": order_type,
+                    "position": pos.ticket,
+                    "deviation": 20,
+                    "comment": "CLOSE_WINNING",
+                    "type_filling": mt5.ORDER_FILLING_IOC,
+                }
+
+                result = mt5.order_send(request)
+                if result and result.retcode == mt5.TRADE_RETCODE_DONE:
+                    closed_count += 1
+                    total_profit += pos.profit
+
+            return f"✅ Closed {closed_count} winning positions | Total profit: ${total_profit:+.2f}"
+        except Exception as e:
+            logger.error(f"Close winning error: {e}")
+            return f"❌ Error closing winning positions: {str(e)[:100]}"
+
     def handle_close_position(self, symbol_text):
         """Close an open position by natural language symbol"""
         import MetaTrader5 as mt5
+
+        # Handle special commands
+        if "all" in symbol_text.lower():
+            return self.handle_close_all_positions()
+        elif "losing" in symbol_text.lower():
+            return self.handle_close_losing_positions()
+        elif "winning" in symbol_text.lower() or "profit" in symbol_text.lower():
+            return self.handle_close_winning_positions()
 
         # Convert natural language to symbol
         symbol = self.parse_symbol_from_text(symbol_text)
