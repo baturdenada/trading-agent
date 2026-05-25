@@ -30,7 +30,7 @@ class RegimeDetector:
         - Bollinger Band width
         - Range high/low
         """
-        if not rates or len(rates) < 20:
+        if rates is None or len(rates) < 20:
             return {"regime": "UNKNOWN", "confidence": 0, "suggested_sl_multiple": 1.0, "suggested_tp_multiple": 1.5}
 
         # Extract data
