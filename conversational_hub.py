@@ -93,8 +93,11 @@ Extract parameters naturally - don't be strict about format."""
     def handle_stats(self):
         """Get account statistics and open positions"""
         try:
+            from ultimate_trader import UltimateTrader
             import MetaTrader5 as mt5
-            account = self.ultimate_trader.mt5_manager.get_account_info()
+
+            trader = UltimateTrader()
+            account = trader.mt5_manager.get_account_info()
 
             if not account:
                 return "MT5 not connected"
