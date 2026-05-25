@@ -188,6 +188,18 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             if not indicators:
                 return f"Could not get market data for {symbol}"
 
+            # Convert SL/TP to float if provided
+            if sl:
+                try:
+                    sl = float(sl)
+                except (ValueError, TypeError):
+                    sl = None
+            if tp:
+                try:
+                    tp = float(tp)
+                except (ValueError, TypeError):
+                    tp = None
+
             # Calculate SL/TP if not provided
             if not sl:
                 sl = indicators['support'] - indicators['atr']
@@ -216,18 +228,27 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             if not symbol_info.trade_mode or symbol_info.trade_mode == 'DISABLED':
                 return f"Trading disabled for {symbol}"
 
-            # Validate and adjust volume
-            min_volume = symbol_info.volume_min
-            volume_step = symbol_info.volume_step
+            # Validate and adjust volume - ensure all values are float
+            min_volume = float(getattr(symbol_info, 'volume_min', None) or 0.1)
+            volume_step = float(getattr(symbol_info, 'volume_step', None) or 0.01)
+            max_volume = float(getattr(symbol_info, 'volume_max', None) or 1000)
+
+            # Ensure quantity is float
+            quantity = float(quantity)
 
             # Ensure quantity meets minimum
             if quantity < min_volume:
                 quantity = min_volume
-                logger.info(f"Volume adjusted from request to minimum: {quantity}")
+
+            # Cap at maximum
+            if quantity > max_volume:
+                quantity = max_volume
 
             # Round to nearest step
-            quantity = round(quantity / volume_step) * volume_step
-            logger.info(f"Final volume: {quantity} (min: {min_volume}, step: {volume_step})")
+            if volume_step > 0:
+                quantity = round(quantity / volume_step) * volume_step
+
+            logger.info(f"Volume: {quantity} (min: {min_volume}, max: {max_volume}, step: {volume_step})")
 
             # Place trade
             order_type = mt5.ORDER_TYPE_BUY if action.upper() == "BUY" else mt5.ORDER_TYPE_SELL
@@ -291,12 +312,14 @@ Keep responses concise for Telegram (max 400 chars per message)."""
             params = intent_data.get('parameters', {})
             symbol = params.get('symbol')
             quantity = params.get('quantity', 0.1)
+            tp = params.get('tp')
+            sl = params.get('sl')
 
             # Infer action from wording
             action = "BUY" if "buy" in user_input.lower() else "SELL" if "sell" in user_input.lower() else "BUY"
 
             if symbol:
-                return self.handle_trade(symbol, action, quantity)
+                return self.handle_trade(symbol, action, quantity, tp=tp, sl=sl)
             else:
                 return "What symbol do you want to trade? (XAUUSD, EURUSD, etc.)"
 
