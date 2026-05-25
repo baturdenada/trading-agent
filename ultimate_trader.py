@@ -855,6 +855,12 @@ Only BUY/SELL if confidence > 60."""
                 logger.info(f"Skipping {symbol_info['name']} due to economic event")
                 continue
 
+            # Emergency: Stop trading if symbol has too many losing positions today
+            losing_on_symbol = sum(1 for p in all_positions if p.get('symbol') == symbol_info['name'] and p.get('pnl', 0) < -10)
+            if losing_on_symbol >= 3:
+                logger.error(f"🚨 BLOCKING {symbol_info['name']}: {losing_on_symbol} losing positions today - circuit breaker triggered")
+                continue
+
             # PHASE 2: Detect new signals
             indicators = self.calculate_indicators(symbol_info['name'])
             if not indicators:
@@ -924,6 +930,17 @@ Only BUY/SELL if confidence > 60."""
                 # Check if we should defer this trade
                 if self.should_defer_trade(adjusted_confidence, symbol_info['name'], all_positions):
                     logger.info(f"Trade deferred for {symbol_info['name']} - waiting for better setup")
+                    continue
+
+                    # Check per-symbol position limit (CRITICAL: prevent multiple positions on same symbol)
+                symbol_open_positions = sum(1 for p in all_positions if p.get('symbol') == symbol_info['name'])
+                if symbol_open_positions > 0:
+                    logger.warning(f"Skipping {symbol_info['name']}: Already has {symbol_open_positions} open position(s)")
+                    continue
+
+                # Check if setup already armed for this symbol
+                if symbol_info['name'] in self.state_machine.pending_setups:
+                    logger.warning(f"Skipping {symbol_info['name']}: Already has armed setup")
                     continue
 
                 # Check correlation risk
