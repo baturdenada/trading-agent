@@ -339,20 +339,52 @@ Only BUY/SELL if confidence > 60."""
         tick = mt5.symbol_info_tick(symbol_info['name'])
         if not tick:
             return
-        
+
         current_price = tick.ask if position.type == 0 else tick.bid
         entry = position.price_open
         pnl = position.profit
+        pnl_pct = (pnl / (position.volume * entry * 100)) * 100 if entry > 0 else 0
         pnl_pips = (current_price - entry) / symbol_info['pip_value'] if position.type == 0 else (entry - current_price) / symbol_info['pip_value']
         atr = self.calculate_atr(symbol_info['name'])
         risk_in_pips = abs(entry - position.sl) / symbol_info['pip_value'] if position.sl else 50
-        
-        if pnl_pips > risk_in_pips * self.trailing_activation:
+
+        # 1. PROFIT-TAKING ALERTS - Notify user of opportunities
+        if position.tp:
+            distance_to_tp = abs(position.tp - current_price)
+            pct_to_tp = (distance_to_tp / abs(position.tp - entry)) * 100 if position.tp != entry else 0
+
+            if pnl > 0:
+                # WINNING POSITION - Alert at milestones
+                if pnl > position.volume * entry * 0.01 and pnl_pct > 0.5:  # 0.5%+ profit
+                    self.send(f"💰 PROFIT ALERT {position.symbol}: +${pnl:.2f} ({pnl_pct:.2f}%) | {pct_to_tp:.0f}% away from TP\nType CLOSE {position.ticket} to exit with profit")
+                elif pnl > position.volume * entry * 0.02 and pnl_pct > 1.0:  # 1.0%+ profit
+                    self.send(f"🎯 STRONG PROFIT {position.symbol}: +${pnl:.2f} ({pnl_pct:.2f}%) | {pct_to_tp:.0f}% from TP\nSuggest: CLOSE for guaranteed profit or hold for TP")
+
+        # 2. TRAILING STOP - Lock in profits above 1.5x risk
+        if pnl_pips > risk_in_pips * self.trailing_activation and pnl > 0:
             new_sl = current_price - (self.trailing_distance * risk_in_pips * symbol_info['pip_value']) if position.type == 0 else current_price + (self.trailing_distance * risk_in_pips * symbol_info['pip_value'])
             if (position.type == 0 and new_sl > position.sl) or (position.type == 1 and new_sl < position.sl):
                 self.modify_sl(position.ticket, new_sl)
                 logger.info(f"Trailing stop updated for {symbol_info['name']} to ${new_sl:.3f}")
-        
+                self.send(f"🛡️ TRAILING STOP activated {position.symbol} | New SL: ${new_sl:.4f}")
+
+        # 3. BREAK-EVEN STOP - Move SL to entry when at 0.5x risk profit
+        if pnl > 0 and pnl_pips > (risk_in_pips * 0.5):
+            breakeven_sl = entry if position.type == 0 else entry
+            if (position.type == 0 and breakeven_sl > position.sl) or (position.type == 1 and breakeven_sl < position.sl):
+                self.modify_sl(position.ticket, breakeven_sl)
+                logger.info(f"Break-even stop set for {symbol_info['name']}")
+                self.send(f"✅ BREAK-EVEN STOP {position.symbol} | SL moved to entry")
+
+        # 4. LOSS MANAGEMENT - Alert on losses approaching SL
+        if pnl < 0:
+            loss_pct = abs(pnl_pct)
+            if loss_pct > 0.5 and loss_pct < 1.5:
+                self.send(f"⚠️ LOSS ALERT {position.symbol}: -${abs(pnl):.2f} ({loss_pct:.2f}%)\nConsider cutting loss or wait for reversal")
+            elif loss_pct > 1.5:
+                self.send(f"🔴 SIGNIFICANT LOSS {position.symbol}: -${abs(pnl):.2f} ({loss_pct:.2f}%)\nRecommend: Review position or close")
+
+        # 5. RSI-BASED EXIT - Close overbought/oversold
         indicators = self.calculate_indicators(symbol_info['name'])
         if indicators:
             if position.type == 0 and indicators['rsi'] > 85:
